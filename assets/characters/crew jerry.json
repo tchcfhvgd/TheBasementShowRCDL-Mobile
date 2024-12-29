@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"loop": true,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 12,
+			"name": "I",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-1,
+				-4
+			],
+			"anim": "singLEFT",
+			"fps": 12,
+			"name": "L",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-14,
+				14
+			],
+			"anim": "singDOWN",
+			"fps": 12,
+			"name": "D",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-1,
+				-9
+			],
+			"anim": "singUP",
+			"fps": 12,
+			"name": "U",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				7
+			],
+			"anim": "singRIGHT",
+			"fps": 12,
+			"name": "R",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-8
+			],
+			"anim": "hi",
+			"fps": 12,
+			"name": "H",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-1,
+				-10
+			],
+			"anim": "off",
+			"fps": 12,
+			"name": "O",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Crew Jerry",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "crew-jerry",
+	"flip_x": false,
+	"healthbar_colors": [
+		169,
+		96,
+		37
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 1.5
+}
