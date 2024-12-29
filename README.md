@@ -3,10 +3,13 @@
 ## Friday Night Funkin' - The Basement Show
 The Mod That Feature's Jerry From Tom's Basement Along With Other Characters
 
-## How To Compile?
+<details>
+  <summary><h2>How to build?</h2></summary>
 Easy. You Compile Just Like How To Compile In Psych Engine 0.6.3 (It's Everywhere So It's Easy For You)
+<details>
 
-## Basement Team Credits:
+<details>
+  <summary><h2>Basement Team Credits</h2></summary>
 ### Director
 * ChallsonOldWood
 ### Co-Director
@@ -90,5 +93,8 @@ Easy. You Compile Just Like How To Compile In Psych Engine 0.6.3 (It's Everywher
 * JustJasonLol
 * Jacob
 * Rhodes_W
+* Cytro
+* DOGE122
 * Oil
 * Wind
+<details>
