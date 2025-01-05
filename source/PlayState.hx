@@ -72,7 +72,7 @@ import sys.FileSystem;
 import sys.io.File;
 #end
 
-mport mobile.TouchButton;
+import mobile.TouchButton;
 import mobile.TouchPad;
 import mobile.input.MobileInputID;
 
