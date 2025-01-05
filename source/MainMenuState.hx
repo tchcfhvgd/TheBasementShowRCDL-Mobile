@@ -91,7 +91,7 @@ class MainMenuState extends MusicBeatState
 		transOut = FlxTransitionableState.defaultTransOut;
 
 		persistentUpdate = persistentDraw = true;
-		FlxG.mouse.visible = true;
+		FlxG.mouse.visible = false;
 
 		var yScroll:Float = Math.max(0 - (0 * (optionShit.length - 0)), 0);
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
@@ -218,6 +218,8 @@ class MainMenuState extends MusicBeatState
 		xy.scrollFactor.set(0, yScroll);
 		//add(xy);
 
+		addTouchPad("UP_DOWN", "A_B");
+		
 		super.create();
 	}
 
