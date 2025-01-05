@@ -176,8 +176,17 @@ class TBSFreeplayState extends MusicBeatState
 		add(songNameThing);
 		
         super.create();
+
+	addTouchPad("LEFT_FULL", "A_B_C");
 	}
-	override public function update(elapsed:Float)
+	
+        override function closeSubState() {
+		super.closeSubState();
+		removeTouchPad();
+		addTouchPad("LEFT_FULL", "A_B_C");
+	}
+
+        override public function update(elapsed:Float)
 	{
 		intendedScore = Highscore.getScore(freeplays[curSelected], 0);
 		intendedRating = Highscore.getRating(freeplays[curSelected], 0);
@@ -230,9 +239,10 @@ class TBSFreeplayState extends MusicBeatState
 			blackScreen.alpha = 1;
 		}
 
-		if(FlxG.keys.justPressed.CONTROL && ClientPrefs.cheaterOn)
+		if(FlxG.keys.justPressed.CONTROL || touchPad.buttonC.justPressed || && ClientPrefs.cheaterOn)
 			{
 				persistentUpdate = false;
+				touchPad.active = touchPad.visible = persistentUpdate = false;
 				openSubState(new GameplayChangersSubstate());
 			}
 
