@@ -1,0 +1,50 @@
+{
+	"storyName": "[Coming Soon] VHS Tape Rewind",
+	"difficulties": "hard",
+	"hideFreeplay": true,
+	"weekBackground": "end",
+	"weekBefore": "lockforeverlol",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": false,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"???",
+			"",
+			[
+				255,
+				255,
+				255
+			]
+		],
+		[
+			"???",
+			"",
+			[
+				255,
+				255,
+				255
+			]
+		],
+		[
+			"???",
+			"",
+			[
+				255,
+				255,
+				255
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"BF",
+		""
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "Week 6 - VHS Tape Rewind"
+}

@@ -1,0 +1,32 @@
+{
+	"storyName": "[Demo Week] Dreamland of Angel",
+	"difficulties": "hard",
+	"hideFreeplay": true,
+	"weekBackground": "doj",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"DOJ Jerry",
+		"BF",
+		""
+	],
+	"songs": [
+		[
+			"None of All",
+			"DOI-Jerry",
+			[
+				223,
+				100,
+				85
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Week 5 - Dreamland of Angel",
+	"hiddenUntilUnlocked": false
+}

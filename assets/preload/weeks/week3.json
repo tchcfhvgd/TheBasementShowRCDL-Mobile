@@ -1,0 +1,50 @@
+{
+	"storyName": "Glitch House",
+	"difficulties": "hard",
+	"hideFreeplay": true,
+	"weekBackground": "pibby",
+	"weekBefore": "week2",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"Funny Cartoon",
+			"pibby-tom",
+			[
+				113,
+				134,
+				161
+			]
+		],
+		[
+			"Cat's Carnival",
+			"pibby-tom",
+			[
+				73,
+				94,
+				121
+			]
+		],
+		[
+			"Unstoppable Block",
+			"pibby-tom",
+			[
+				53,
+				74,
+				101
+			]
+		]
+	],
+	"weekCharacters": [
+		"Pibby Tom",
+		"BF",
+		""
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "Week 3 - Glitch House"
+}
