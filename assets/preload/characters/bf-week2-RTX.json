@@ -3,7 +3,7 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
+				-5,
 				0
 			],
 			"anim": "idle",
@@ -14,8 +14,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-8,
-				45
+				-11,
+				32
 			],
 			"anim": "singLEFT",
 			"fps": 24,
@@ -25,8 +25,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				43
+				-5,
+				33
 			],
 			"anim": "singDOWN",
 			"fps": 24,
@@ -36,8 +36,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-54,
-				81
+				-39,
+				61
 			],
 			"anim": "singUP",
 			"fps": 24,
@@ -47,8 +47,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				1,
-				88
+				-4,
+				64
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
@@ -58,8 +58,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-8,
-				45
+				-12,
+				32
 			],
 			"anim": "singLEFTmiss",
 			"fps": 24,
@@ -69,8 +69,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				43
+				-5,
+				33
 			],
 			"anim": "singDOWNmiss",
 			"fps": 24,
@@ -80,8 +80,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				-54,
-				81
+				-46,
+				62
 			],
 			"anim": "singUPmiss",
 			"fps": 24,
@@ -91,8 +91,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				1,
-				88
+				-3,
+				64
 			],
 			"anim": "singRIGHTmiss",
 			"fps": 24,
@@ -103,7 +103,7 @@
 			"loop": false,
 			"offsets": [
 				-3,
-				21
+				11
 			],
 			"anim": "firstDeath",
 			"fps": 24,
@@ -114,7 +114,7 @@
 			"loop": true,
 			"offsets": [
 				-3,
-				21
+				11
 			],
 			"anim": "deathLoop",
 			"fps": 24,
@@ -125,7 +125,7 @@
 			"loop": false,
 			"offsets": [
 				-3,
-				21
+				11
 			],
 			"anim": "deathConfirm",
 			"fps": 24,
@@ -136,7 +136,7 @@
 			"loop": false,
 			"offsets": [
 				10,
-				34
+				24
 			],
 			"anim": "dodge",
 			"fps": 24,
@@ -145,12 +145,12 @@
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/bf-alt",
+	"image": "characters/bf-alt-rtx",
 	"position": [
 		-160,
-		230
+		200
 	],
-	"healthicon": "bf",
+	"healthicon": "bf-blue",
 	"flip_x": true,
 	"healthbar_colors": [
 		81,
@@ -159,8 +159,8 @@
 	],
 	"camera_position": [
 		0,
-		50
+		0
 	],
 	"sing_duration": 4,
-	"scale": 0.8
+	"scale": 0.6
 }

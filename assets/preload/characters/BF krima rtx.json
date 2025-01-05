@@ -3,151 +3,107 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
+				-5,
 				0
 			],
 			"anim": "idle",
 			"fps": 24,
-			"name": "BF idle dance",
+			"name": "idle",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-8,
-				45
+				-25,
+				3
 			],
 			"anim": "singLEFT",
 			"fps": 24,
-			"name": "BF NOTE LEFT0",
+			"name": "left",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				43
+				-46,
+				-60
 			],
 			"anim": "singDOWN",
 			"fps": 24,
-			"name": "BF NOTE DOWN0",
+			"name": "down",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-54,
-				81
+				-71,
+				61
 			],
 			"anim": "singUP",
 			"fps": 24,
-			"name": "BF NOTE UP0",
+			"name": "up",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				1,
-				88
+				-43,
+				0
 			],
 			"anim": "singRIGHT",
 			"fps": 24,
-			"name": "BF NOTE RIGHT0",
+			"name": "right",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-8,
-				45
+				-26,
+				3
 			],
 			"anim": "singLEFTmiss",
 			"fps": 24,
-			"name": "BF NOTE LEFT MISS",
+			"name": "lm1",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				43
+				-52,
+				-71
 			],
 			"anim": "singDOWNmiss",
 			"fps": 24,
-			"name": "BF NOTE DOWN MISS",
+			"name": "dm1",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				-54,
-				81
+				-88,
+				64
 			],
 			"anim": "singUPmiss",
 			"fps": 24,
-			"name": "BF NOTE UP MISS",
+			"name": "um1",
 			"indices": []
 		},
 		{
 			"loop": false,
 			"offsets": [
-				1,
-				88
+				-53,
+				-1
 			],
 			"anim": "singRIGHTmiss",
 			"fps": 24,
-			"name": "BF NOTE RIGHT MISS",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-3,
-				21
-			],
-			"anim": "firstDeath",
-			"fps": 24,
-			"name": "BF dies",
-			"indices": []
-		},
-		{
-			"loop": true,
-			"offsets": [
-				-3,
-				21
-			],
-			"anim": "deathLoop",
-			"fps": 24,
-			"name": "BF die loop",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				-3,
-				21
-			],
-			"anim": "deathConfirm",
-			"fps": 24,
-			"name": "BF retry confirm",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				10,
-				34
-			],
-			"anim": "dodge",
-			"fps": 24,
-			"name": "boyfriend dodge",
+			"name": "rm1",
 			"indices": []
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/bf-alt",
+	"image": "characters/bf krima RTX",
 	"position": [
-		-160,
+		-90,
 		230
 	],
 	"healthicon": "bf",
@@ -159,8 +115,8 @@
 	],
 	"camera_position": [
 		0,
-		50
+		0
 	],
 	"sing_duration": 4,
-	"scale": 0.8
+	"scale": 1
 }
