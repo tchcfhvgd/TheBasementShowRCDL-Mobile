@@ -33,6 +33,7 @@ class TBSIntroState extends MusicBeatState
 		Paths.clearUnusedMemory();
         PlayerSettings.init();
         ClientPrefs.loadPrefs();
+	mobile.MobileData.init();
 
 		if(FlxG.save.data.showFPS != null) {
 			ClientPrefs.showFPS = FlxG.save.data.showFPS;
