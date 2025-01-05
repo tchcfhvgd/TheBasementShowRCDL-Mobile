@@ -80,7 +80,7 @@ class OldTVShader extends FlxShader
         	float window = 1./(1.+20.*(look.y-mod(iTime/4.,1.))*(look.y-mod(iTime/4.,15.)));
         	look.x = look.x + (sin(look.y*10. + iTime)/540.*onOff(4.,4.,.3)*(1.+cos(iTime*80.))*window)*(glitchModifier*2.);
         	float vShift = 0.4*onOff(2.,3.,.9)*(sin(iTime)*sin(iTime*20.) +
-        										 (1 + 0.1*sin(iTime*200.)*cos(iTime)));
+        										 (1.0 + 0.1*sin(iTime*200.)*cos(iTime)));
         	look.y = mod(look.y + vShift*glitchModifier, 1.);
       	vec4 video = flixel_texture2D(bitmap,look);
 
@@ -91,8 +91,8 @@ class OldTVShader extends FlxShader
     {
         uv = (uv - 0.5) * 2.0;
       	uv *= 1.1;
-      	uv.x *= 1.0 + pow((abs(uv.y) / 4.5), 2);
-      	uv.y *= 1.0 + pow((abs(uv.x) / 3.5), 2);
+      	uv.x *= 1.0 + pow((abs(uv.y) / 4.5), 2.0);
+      	uv.y *= 1.0 + pow((abs(uv.x) / 3.5), 2.0);
       	uv  = (uv / 2.0) + 0.5;
       	uv =  uv *0.92 + 0.04;
       	return uv;
@@ -125,7 +125,7 @@ class OldTVShader extends FlxShader
 
     vec2 scandistort(vec2 uv) {
     	float scan1 = clamp(cos(uv.y * 3.0 + iTime), 4.0, 1.0);
-    	float scan2 = clamp(cos(uv.y * 6.0 + iTime + 4.0) * 10.0,0, 1.0) ;
+    	float scan2 = clamp(cos(uv.y * 6.0 + iTime + 4.0) * 10.0,0.0, 1.0) ;
     	float amount = scan1 * scan2 * uv.x;
 
     	uv.x -= 0.015 * mix(flixel_texture2D(noiseTex, vec2(uv.x, amount)).r * amount, amount, 0.2);
@@ -140,13 +140,13 @@ class OldTVShader extends FlxShader
     	uv = scandistort(curUV);
     	vec4 video = getVideo(uv);
       float vigAmt = 1.0;
-      float x = 0;
+      float x = 0.0;
       float grainFactor = filmGrainNoise(iTime, uv);
 
 
-      video.r = getVideo(vec2(x+uv.x+0.001,uv.y+1)).x + abs(sin(0.12 * redOpac)); // used for sirokous fire part
-      video.g = getVideo(vec2(x+uv.x-0.001,uv.y+1)).y + abs(sin(0.06 * blueOpac));
-      video.b = getVideo(vec2(x+uv.x-0.001,uv.y+1)).z + abs(sin(0.06 * blueOpac));
+      video.r = getVideo(vec2(x+uv.x+0.001,uv.y+1.0)).x + abs(sin(0.12 * redOpac)); // used for sirokous fire part
+      video.g = getVideo(vec2(x+uv.x-0.001,uv.y+1.0)).y + abs(sin(0.06 * blueOpac));
+      video.b = getVideo(vec2(x+uv.x-0.001,uv.y+1.0)).z + abs(sin(0.06 * blueOpac));
     	vigAmt = 2.+.1*sin(iTime + 5.*cos(iTime*5.));
 
     	float vignette = (1.1-vigAmt*(uv.y-.5)*(uv.y-.5))*(0.1-vigAmt*(uv.x-.5)*(uv.x-.5));
@@ -154,7 +154,7 @@ class OldTVShader extends FlxShader
       gl_FragColor = mix(video,vec4(noise(uv * 75.)),.05);
 
       if(curUV.x<0. || curUV.x>1. || curUV.y<0. || curUV.y>1.){
-        gl_FragColor = vec4(0,0,0,0);
+        gl_FragColor = vec4(0.0,0.0,0.0,0.0);
       }
 
     }
@@ -180,7 +180,7 @@ class MenusGlow extends FlxShader
 // GAUSSIAN BLUR SETTINGS
 uniform float dim;
 float directions = 8.0;
-float quality = 4;
+float quality = 4.0;
 //float directions = 16;
 //float quality = 30;
 uniform float size; 
@@ -205,7 +205,7 @@ void main(void)
         }
     }
 
-    Color /= max(aaply - (directions - 1.0), 1);//(dim * quality) * directions - (directions - 1.0);
+    Color /= max(aaply - (directions - 1.0), 1.0);//(dim * quality) * directions - (directions - 1.0);
     vec4 bloom =  (flixel_texture2D( bitmap, uv)/ dim)+Color;
 
     gl_FragColor = bloom;
@@ -256,7 +256,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     // Chromatic
     col.r = texture(iChannel0,vec2(uv.x+0.002,uv.y)).x;
     col.g = texture(iChannel0,vec2(uv.x,uv.y)).y;
-    col.b = texture(iChannel0,vec2(uv.x+0.002 * -1,uv.y)).z;
+    col.b = texture(iChannel0,vec2(uv.x+0.002 * -1.0,uv.y)).z;
 
     col *= step(0.0, uv.x) * step(0.0, uv.y);
     col *= 1.0 - step(1.0, uv.x) * 1.0 - step(1.0, uv.y);
@@ -345,7 +345,7 @@ class Scanline extends FlxShader
 	@:glFragmentSource('
 		#pragma header
 		const float scale = 1.0;
-	uniform bool lockAlpha = false;
+	uniform bool lockAlpha;
 		void main()
 		{
 			if (mod(floor(openfl_TextureCoordv.y * openfl_TextureSize.y / scale), 2.0) == 0.0 ){
@@ -417,10 +417,10 @@ class Tiltshift extends FlxShader
 		 
 		// I am hardcoding the constants like a jerk
 			
-		uniform float bluramount  = 1.0;
-		uniform float center      = 1.0;
-		const float stepSize    = 0.004;
-		const float steps       = 3.0;
+		uniform float bluramount;
+		uniform float center;
+		const float stepSize = 0.004;
+		const float steps = 3.0;
 		 
 		const float minOffs     = (float(steps-1.0)) / -2.0;
 		const float maxOffs     = (float(steps-1.0)) / +2.0;
@@ -756,7 +756,7 @@ class VCRDistortionShader extends FlxShader // https://www.shadertoy.com/view/ld
       	vec2 look = uv;
         if(distortionOn){
         	float window = 1./(1.+20.*(look.y-mod(iTime/4.,1.))*(look.y-mod(iTime/4.,1.)));
-        	look.x = look.x + (sin(look.y*10. + iTime)/50.*onOff(4.,4.,.3)*(1.+cos(iTime*80.))*window)*(glitchModifier*2);
+        	look.x = look.x + (sin(look.y*10. + iTime)/50.*onOff(4.,4.,.3)*(1.+cos(iTime*80.))*window)*(glitchModifier*2.0);
         	float vShift = 0.4*onOff(2.,3.,.9)*(sin(iTime)*sin(iTime*20.) +
         										 (0.5 + 0.1*sin(iTime*200.)*cos(iTime)));
         	look.y = mod(look.y + vShift*glitchModifier, 1.);
@@ -839,8 +839,8 @@ class VCRDistortionShader extends FlxShader // https://www.shadertoy.com/view/ld
 
       gl_FragColor = mix(video,vec4(noise(uv * 75.)),.05);
 
-      if(curUV.x<0 || curUV.x>1 || curUV.y<0 || curUV.y>1){
-        gl_FragColor = vec4(0,0,0,0);
+      if(curUV.x<0.0 || curUV.x>1.0 || curUV.y<0.0 || curUV.y>1.0){
+        gl_FragColor = vec4(0.0,0.0,0.0,0.0);
       }
 
     }
@@ -871,11 +871,11 @@ class ThreeDEffect extends Effect{
 class ThreeDShader extends FlxShader{
 	@:glFragmentSource('
 	#pragma header
-	uniform float xrot = 0.0;
-	uniform float yrot = 0.0;
-	uniform float zrot = 0.0;
-	uniform float dept = 0.0;
-	float alph = 0;
+	uniform float xrot;
+	uniform float yrot;
+	uniform float zrot;
+	uniform float dept;
+	float alph = 0.0;
 float plane( in vec3 norm, in vec3 po, in vec3 ro, in vec3 rd ) {
     float de = dot(norm, rd);
     de = sign(de)*max( abs(de), 0.001);
@@ -896,7 +896,7 @@ vec2 raytraceTexturedQuad(in vec3 rayOrigin, in vec3 rayDirection, in vec3 quadC
     //--------------------------------------
     
     vec3 right = RotationMatrix * vec3(quadDimensions.x, 0.0, 0.0);
-    vec3 up = RotationMatrix * vec3(0, quadDimensions.y, 0);
+    vec3 up = RotationMatrix * vec3(0.0, quadDimensions.y, 0.0);
     vec3 normal = cross(right, up);
     normal /= length(normal);
     
@@ -913,7 +913,7 @@ void main() {
     //Screen UV goes from 0 - 1 along each axis
     vec2 screenUV = openfl_TextureCoordv;
     vec2 p = (2.0 * screenUV) - 1.0;
-    float screenAspect = 1280/720;
+    float screenAspect = 1280.0/720.0;
     p.x *= screenAspect;
     
     //Normalized Ray Dir
@@ -925,7 +925,7 @@ void main() {
     vec3 planeRotation = vec3(xrot, yrot, zrot);//this the shit you needa change
     vec2 planeDimension = vec2(-screenAspect, 1.0);
     
-    vec2 uv = raytraceTexturedQuad(vec3(0), dir, planePosition, planeRotation, planeDimension);
+    vec2 uv = raytraceTexturedQuad(vec3(0.0), dir, planePosition, planeRotation, planeDimension);
 	
     //If we hit the rectangle, sample the texture
     if (abs(uv.x - 0.5) < 0.5 && abs(uv.y - 0.5) < 0.5) {
@@ -939,7 +939,6 @@ void main() {
 	  gl_FragColor = vec4(flixel_texture2D(bitmap, uv).xyz, bitch);
     }
 }
-
 
 	')
 	
@@ -1127,10 +1126,10 @@ class BloomShader extends FlxShader{
 	
 	@:glFragmentSource('
 	
-	#pragma header
+    #pragma header
 	
-	uniform float intensity = 0.35;
-	uniform float blurSize = 1.0/512.0;
+	uniform float intensity;
+	uniform float blurSize;
 void main()
 {
    vec4 sum = vec4(0);
