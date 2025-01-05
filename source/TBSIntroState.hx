@@ -18,10 +18,6 @@ import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
 
-#if VIDEOS_ALLOWED
-import vlc.MP4Handler;
-#end
-
 #if sys
 import sys.FileSystem;
 import sys.io.File;
@@ -75,17 +71,16 @@ class TBSIntroState extends MusicBeatState
         {
             #if VIDEOS_ALLOWED
             var filepath:String = Paths.video(name);
-            #if sys
-            if(!FileSystem.exists(filepath))
-            #else
-            if(!OpenFlAssets.exists(filepath))
-            #end
-            {
-                FlxG.log.warn('Couldnt find video file: ' + name);
-                return;
-            }
-
-            if(FlxG.save.data.showFPS != null) {
+		#if sys
+		if(!FileSystem.exists(filepath))
+		#else
+		if(!OpenFlAssets.exists(filepath))
+		#end
+		{
+			FlxG.log.warn('Couldnt find video file: ' + name);
+			return;
+		}       
+		if(FlxG.save.data.showFPS != null) {
                 ClientPrefs.showFPS = FlxG.save.data.showFPS;
                 if(Main.fpsVar != null) {
                     Main.fpsVar.visible = ClientPrefs.showFPS;
@@ -110,16 +105,19 @@ class TBSIntroState extends MusicBeatState
                     FlxG.sound.muted = FlxG.save.data.mute;
             }
 
-            var video:MP4Handler = new MP4Handler();
-            video.playVideo(filepath);
-            video.finishCallback = function()
-            {
-                MusicBeatState.switchState(new TitleState()); //this will make after the video done it will switch to the intro text/ title state
-                return;
-            }
-            #else
-            FlxG.log.warn('Platform not supported!');
-            return;
-            #end
+                var video:FlxVideo = new FlxVideo();
+		video.load(filepath);
+		video.play();
+		video.onEndReached.add(function()
+		{
+			video.dispose();
+			MusicBeatState.switchState(new TitleState()); //this will make after the video done it will switch to the intro text/ title state
+			return;
+		}, true);
+
+		#else
+		FlxG.log.warn('Platform not supported!');
+		return;
+		#end
         }
 }
