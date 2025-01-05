@@ -1408,17 +1408,32 @@ class FunkinLua {
 			return Std.parseInt(color);
 		});
 
-		Lua_helper.add_callback(lua, "keyboardJustPressed", function(name:String)
+	    Lua_helper.add_callback(lua, "keyboardJustPressed", function(name:String)
 		{
-			return Reflect.getProperty(FlxG.keys.justPressed, name);
+			return switch (name.toUpperCase()) {
+			case "SPACE":
+				MusicBeatState.getState().mobileControls.buttonExtra.justPressed || Reflect.getProperty(FlxG.keys.justPressed, "SPACE");
+			default:
+				Reflect.getProperty(FlxG.keys.justPressed, name);
+			}
 		});
 		Lua_helper.add_callback(lua, "keyboardPressed", function(name:String)
 		{
-			return Reflect.getProperty(FlxG.keys.pressed, name);
+			return switch (name.toUpperCase()) {
+			case "SPACE":
+				MusicBeatState.getState().mobileControls.buttonExtra.pressed || Reflect.getProperty(FlxG.keys.pressed, "SPACE");
+			default:
+				Reflect.getProperty(FlxG.keys.pressed, name);
+			}
 		});
 		Lua_helper.add_callback(lua, "keyboardReleased", function(name:String)
 		{
-			return Reflect.getProperty(FlxG.keys.justReleased, name);
+			return switch (name.toUpperCase()) {
+			case "SPACE":
+				MusicBeatState.getState().mobileControls.buttonExtra.justReleased || Reflect.getProperty(FlxG.keys.justReleased, "SPACE");
+			default:
+				Reflect.getProperty(FlxG.keys.justReleased, name);
+			}
 		});
 
 		Lua_helper.add_callback(lua, "anyGamepadJustPressed", function(name:String)
@@ -1482,7 +1497,7 @@ class FunkinLua {
 
 		Lua_helper.add_callback(lua, "keyJustPressed", function(name:String) {
 			var key:Bool = false;
-			switch(name) {
+			switch(name.toLowerCase()) {
 				case 'left': key = PlayState.instance.getControl('NOTE_LEFT_P');
 				case 'down': key = PlayState.instance.getControl('NOTE_DOWN_P');
 				case 'up': key = PlayState.instance.getControl('NOTE_UP_P');
@@ -1491,29 +1506,29 @@ class FunkinLua {
 				case 'back': key = PlayState.instance.getControl('BACK');
 				case 'pause': key = PlayState.instance.getControl('PAUSE');
 				case 'reset': key = PlayState.instance.getControl('RESET');
-				case 'space': key = FlxG.keys.justPressed.SPACE;//an extra key for convinience
+			    case 'space': key = MusicBeatState.getState().mobileControls.buttonExtra.justPressed || FlxG.keys.justPressed.SPACE;//an extra key for convinience
 			}
 			return key;
 		});
 		Lua_helper.add_callback(lua, "keyPressed", function(name:String) {
 			var key:Bool = false;
-			switch(name) {
+			switch(name.toLowerCase()) {
 				case 'left': key = PlayState.instance.getControl('NOTE_LEFT');
 				case 'down': key = PlayState.instance.getControl('NOTE_DOWN');
 				case 'up': key = PlayState.instance.getControl('NOTE_UP');
 				case 'right': key = PlayState.instance.getControl('NOTE_RIGHT');
-				case 'space': key = FlxG.keys.pressed.SPACE;//an extra key for convinience
+				case 'space': key = MusicBeatState.getState().mobileControls.buttonExtra.pressed || FlxG.keys.pressed.SPACE;//an extra key for convinience
 			}
 			return key;
 		});
 		Lua_helper.add_callback(lua, "keyReleased", function(name:String) {
 			var key:Bool = false;
-			switch(name) {
+			switch(name.toLowerCase()) {
 				case 'left': key = PlayState.instance.getControl('NOTE_LEFT_R');
 				case 'down': key = PlayState.instance.getControl('NOTE_DOWN_R');
 				case 'up': key = PlayState.instance.getControl('NOTE_UP_R');
 				case 'right': key = PlayState.instance.getControl('NOTE_RIGHT_R');
-				case 'space': key = FlxG.keys.justReleased.SPACE;//an extra key for convinience
+			    case 'space': key =  MusicBeatState.getState().mobileControls.buttonExtra.justReleased || FlxG.keys.justReleased.SPACE;//an extra key for convinience
 			}
 			return key;
 		});
