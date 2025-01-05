@@ -30,6 +30,9 @@ class FlashingState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
+		final buttonBack:String = controls.mobileC ? 'B' : 'ESCAPE';
+		final buttonAccept:String = controls.mobileC ? 'A' : 'ENTER';
+		
 		warn = new FlxText(0, 30, FlxG.width,
 			"Hey, watch out!",
 			32);
@@ -38,11 +41,11 @@ class FlashingState extends MusicBeatState
 		add(warn);
 
 		warnText = new FlxText(0, 30, FlxG.width,
-			"This Project contains some flashing lights!, gore, and screen shake\nCase You Have Seisure, Press ENTER to disable them now or go to Options Menu.\nElse, Press ESCAPE to ignore this message.\n\nEnjoy The Show...",
+			'This Project contains some flashing lights!, gore, and screen shake\nCase You Have Seisure, Press ENTER to disable them now or go to Options Menu.\nElse, Press ESCAPE to ignore this message.\n\nEnjoy The Show...',
 			32);
 		warnText.setFormat(Paths.font("vcr.ttf"), 34, FlxColor.WHITE, CENTER);
 		warnText.applyMarkup(
-			"This Project contains some $flashing lights$, *gore*, and screen shake.\nCase You Have Seizure, Press $ENTER$ to disable them now or go to Options Menu.\nIf Not, Press *ESCAPE* to ignore this message.",
+			"This Project contains some $flashing lights$, *gore*, and screen shake.\nCase You Have Seizure, Press $A$ to disable them now or go to Options Menu.\nIf Not, Press *B* to ignore this message.",
 			[
 				new FlxTextFormatMarkerPair(new FlxTextFormat(0xFFFF0000), "*"),
 				new FlxTextFormatMarkerPair(new FlxTextFormat(0xFFFFF000), "$")
@@ -58,6 +61,8 @@ class FlashingState extends MusicBeatState
 		myeyes = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
 		myeyes.alpha = 0;
 		add(myeyes);
+
+		addTouchPad("NONE", "A_B");
 	}
 
 	override function update(elapsed:Float)
