@@ -315,6 +315,9 @@ class PauseSubState extends MusicBeatSubstate
 		xy = new FlxText(0, 0);
 			xy.setFormat(Paths.font("vcr.ttf"), 18, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 			//add(xy);
+
+                addTouchPad(PlayState.chartingMode ? "LEFT_FULL" : "UP_DOWN", "A");
+		addTouchPadCamera();
 	}
 
 	var holdTime:Float = 0;
