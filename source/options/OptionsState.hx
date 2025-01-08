@@ -30,7 +30,7 @@ using StringTools;
 class OptionsState extends MusicBeatState
 {
 	var options:Array<String> = [
-	'Note Colors', 
+	//'Note Colors', 
 	'Controls', 
 	'Graphics', 
 	'Visuals and UI', 
@@ -87,7 +87,6 @@ class OptionsState extends MusicBeatState
 
 		changeSelection();
 		ClientPrefs.saveSettings();
-		PlayState.qqqeb = true;
 
 		addTouchPad("UP_DOWN", "A_B_C");
 		
