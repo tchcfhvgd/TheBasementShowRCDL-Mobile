@@ -62,6 +62,7 @@ class StoryMenuState extends MusicBeatState
 		Paths.clearUnusedMemory();
 
 		PlayState.isStoryMode = true;
+		TBSFreeplayState.chosendifficulty = 'hard';
 		WeekData.reloadWeekFiles(true);
 		if(curWeek >= WeekData.weeksList.length) curWeek = 0;
 		persistentUpdate = persistentDraw = true;
