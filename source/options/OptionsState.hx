@@ -41,6 +41,8 @@ class OptionsState extends MusicBeatState
 	public static var menuBG:FlxSprite;
 
 	function openSelectedSubstate(label:String) {
+                        persistentUpdate = false;
+			removeTouchPad();
 		switch(label) {
 			case 'Note Colors':
 				openSubState(new options.NotesSubState());
@@ -93,6 +95,7 @@ class OptionsState extends MusicBeatState
 
 	override function closeSubState() {
 		super.closeSubState();
+		persistentUpdate = true;
 		removeTouchPad();
 		addTouchPad("UP_DOWN", "A_B_C");
 		ClientPrefs.saveSettings();
