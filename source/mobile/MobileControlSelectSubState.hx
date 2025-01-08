@@ -311,6 +311,10 @@ class MobileControlSelectSubState extends MusicBeatSubstate
 		{
 			if (TouchUtil.pressed)
 				button.animation.play('press');
+			if (TouchUtil.justPressed)
+			{
+				func();
+			}
 		}
 		if (TouchUtil.justReleased && button.animation.curAnim.name == 'press')
 			button.animation.play('idle');
