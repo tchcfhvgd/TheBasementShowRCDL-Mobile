@@ -1,9 +1,9 @@
 package options;
 
-#if DISCORD_ALLOWED
+#if desktop
 import Discord.DiscordClient;
 #end
-import openfl.text.TextField;
+import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
@@ -13,7 +13,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.FlxSubState;
-import openfl.text.TextField;
+import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.FlxSave;
@@ -33,6 +33,20 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 	{
 		title = 'Gameplay Settings';
 		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
+
+		var option:Option = new Option('Mechanics', //Name
+			'If unchecked, the game will be easier without dealing with any mechanics.', //Description
+			'mechanicsOn', //Save data variable name
+			'bool', //Variable type
+			true); //Default value
+		addOption(option);
+
+		var option:Option = new Option('Modcharts', //Name
+			'If checked, some songs will have mod charts \nlike middle scroll, wavy notes, or camera angle changes.', //Description
+			'enablemodchart', //Save data variable name
+			'bool', //Variable type
+			true); //Default value
+		addOption(option);
 
 		var option:Option = new Option('Controller Mode',
 			'Check this if you want to play with\na controller instead of using your Keyboard.',
@@ -66,13 +80,6 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		var option:Option = new Option('Ghost Tapping',
 			"If checked, you won't get misses from pressing keys\nwhile there are no notes able to be hit.",
 			'ghostTapping',
-			'bool',
-			true);
-		addOption(option);
-
-		var option:Option = new Option('Pop Up Score',
-			"If unchecked, hitting notes won't make \"sick\", \"good\".. and combo popups.",
-			'popUpRating',
 			'bool',
 			true);
 		addOption(option);

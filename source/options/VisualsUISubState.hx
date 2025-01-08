@@ -1,9 +1,9 @@
 package options;
 
-#if DISCORD_ALLOWED
+#if desktop
 import Discord.DiscordClient;
 #end
-import openfl.text.TextField;
+import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
@@ -13,7 +13,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.FlxSubState;
-import openfl.text.TextField;
+import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.FlxSave;
@@ -24,10 +24,6 @@ import flixel.util.FlxTimer;
 import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
 import Controls;
-#if sys
-import sys.io.File;
-import sys.FileSystem;
-#end
 
 using StringTools;
 
@@ -38,11 +34,23 @@ class VisualsUISubState extends BaseOptionsMenu
 		title = 'Visuals and UI';
 		rpcTitle = 'Visuals & UI Settings Menu'; //for Discord Rich Presence
 
-		var option:Option = new Option('Note Splashes',
-			"If unchecked, hitting \"Sick!\" notes won't show particles.",
-			'noteSplashes',
-			'bool',
-			true);
+		var option:Option = new Option('Note Splash Alpha',
+			'How much transparent should the note splashes gonna be.',
+			'slpashAlpha',
+			'percent',
+			1);
+		option.scrollSpeed = 1.6;
+		option.minValue = 0.0;
+		option.maxValue = 1;
+		option.changeValue = 0.1;
+		option.decimals = 1;
+		addOption(option);
+
+		var option:Option = new Option('Judgement Counter', //Name
+			'If checked, a judgement counter will appear telling you how much you\'re doing with combo.', //Description
+			'judjmentbool', //Save data variable name
+			'bool', //Variable type
+			true); //Default value
 		addOption(option);
 
 		var option:Option = new Option('Hide HUD',
@@ -93,7 +101,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		option.decimals = 1;
 		addOption(option);
 		
-		#if !html5
+		#if !mobile
 		var option:Option = new Option('FPS Counter',
 			'If unchecked, hides FPS Counter.',
 			'showFPS',
@@ -148,7 +156,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		super.destroy();
 	}
 
-	#if !html5
+	#if !mobile
 	function onChangeFPSCounter()
 	{
 		if(Main.fpsVar != null)

@@ -1,9 +1,9 @@
 package options;
 
-#if DISCORD_ALLOWED
+#if desktop
 import Discord.DiscordClient;
 #end
-import openfl.text.TextField;
+import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
@@ -13,7 +13,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.FlxSubState;
-import openfl.text.TextField;
+import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.FlxSave;
@@ -89,8 +89,6 @@ class NotesSubState extends MusicBeatSubstate
 		add(hsbText);
 
 		changeSelection();
-
-		addTouchPad("LEFT_FULL", "A_B_C");
 	}
 
 	var changingNote:Bool = false;
@@ -103,7 +101,7 @@ class NotesSubState extends MusicBeatSubstate
 				} else if(controls.UI_RIGHT_P) {
 					updateValue(1);
 					FlxG.sound.play(Paths.sound('scrollMenu'));
-				} else if(touchPad.buttonC.justPressed || controls.RESET) {
+				} else if(controls.RESET) {
 					resetValue(curSelected, typeSelected);
 					FlxG.sound.play(Paths.sound('scrollMenu'));
 				}
@@ -144,7 +142,7 @@ class NotesSubState extends MusicBeatSubstate
 				changeType(1);
 				FlxG.sound.play(Paths.sound('scrollMenu'));
 			}
-			if(touchPad.buttonC.justPressed || controls.RESET) {
+			if(controls.RESET) {
 				for (i in 0...3) {
 					resetValue(curSelected, i);
 				}

@@ -1,9 +1,9 @@
 package options;
 
-#if DISCORD_ALLOWED
+#if desktop
 import Discord.DiscordClient;
 #end
-import openfl.text.TextField;
+import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
@@ -13,7 +13,7 @@ import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.FlxSubState;
-import openfl.text.TextField;
+import flash.text.TextField;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.FlxSave;
@@ -51,7 +51,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		if(title == null) title = 'Options';
 		if(rpcTitle == null) rpcTitle = 'Options Menu';
 		
-		#if DISCORD_ALLOWED
+		#if desktop
 		DiscordClient.changePresence(rpcTitle, null);
 		#end
 		
@@ -123,8 +123,6 @@ class BaseOptionsMenu extends MusicBeatSubstate
 
 		changeSelection();
 		reloadCheckboxes();
-
-		addTouchPad("LEFT_FULL", "A_B_C");
 	}
 
 	public function addOption(option:Option) {
@@ -240,7 +238,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 				}
 			}
 
-			if(touchPad.buttonC.justPressed || controls.RESET)
+			if(controls.RESET)
 			{
 				for (i in 0...optionsArray.length)
 				{
@@ -339,7 +337,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			boyfriend.destroy();
 		}
 
-		boyfriend = new Character(540, 100, 'bf', true);
+		boyfriend = new Character(640, 100, 'bf', true);
 		boyfriend.setGraphicSize(Std.int(boyfriend.width * 0.75));
 		boyfriend.updateHitbox();
 		boyfriend.dance();
