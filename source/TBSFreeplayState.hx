@@ -239,7 +239,7 @@ class TBSFreeplayState extends MusicBeatState
 			blackScreen.alpha = 1;
 		}
 
-		if(FlxG.keys.justPressed.CONTROL || touchPad.buttonC.justPressed && ClientPrefs.cheaterOn)
+		if(FlxG.keys.justPressed.CONTROL || touchPad.buttonC.justPressed)
 			{
 				persistentUpdate = false;
 				touchPad.active = touchPad.visible = persistentUpdate = false;
