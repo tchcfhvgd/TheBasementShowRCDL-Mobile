@@ -264,7 +264,7 @@ class StoryMenuState extends MusicBeatState
 			else if (upP || downP)
 				changeDifficulty();
 
-			if(FlxG.keys.justPressed.CONTROL || touchPad.buttonX.justPressed && ClientPrefs.cheaterOn)
+			if(FlxG.keys.justPressed.CONTROL || touchPad.buttonX.justPressed)
 			{
 				persistentUpdate = false;
 				touchPad.active = touchPad.visible = persistentUpdate = false;
