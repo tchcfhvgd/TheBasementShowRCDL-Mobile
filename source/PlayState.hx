@@ -225,6 +225,7 @@ class PlayState extends MusicBeatState
 	private var updateTime:Bool = true;
 	public static var changedDifficulty:Bool = false;
 	public static var chartingMode:Bool = false;
+	public static var qqqeb:Bool = false;
 
 	//Gameplay settings
 	public var healthGain:Float = 1;
@@ -5804,6 +5805,8 @@ class PlayState extends MusicBeatState
 		if(FunkinLua.hscript != null) FunkinLua.hscript = null;
 		#end
 
+		qqqeb = false;
+		
 		Conductor.changeBPM(100);
 
 		if(!ClientPrefs.controllerMode)
