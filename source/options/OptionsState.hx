@@ -30,11 +30,12 @@ using StringTools;
 class OptionsState extends MusicBeatState
 {
 	var options:Array<String> = [
-	//'Note Colors', 
+	'Note Colors', 
 	'Controls', 
 	'Graphics', 
 	'Visuals and UI', 
-	'Gameplay'];
+	'Gameplay',
+	'Mobile Options'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
 	public static var menuBG:FlxSprite;
@@ -51,6 +52,8 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.VisualsUISubState());
 			case 'Gameplay':
 				openSubState(new options.GameplaySettingsSubState());
+			case 'Mobile Options':
+				openSubState(new mobile.options.MobileOptionsSubState());
 		}
 	}
 
@@ -83,11 +86,15 @@ class OptionsState extends MusicBeatState
 		changeSelection();
 		ClientPrefs.saveSettings();
 
+		addTouchPad("UP_DOWN", "A_B_C");
+		
 		super.create();
 	}
 
 	override function closeSubState() {
 		super.closeSubState();
+		removeTouchPad();
+		addTouchPad("UP_DOWN", "A_B_C");
 		ClientPrefs.saveSettings();
 	}
 
@@ -113,6 +120,11 @@ class OptionsState extends MusicBeatState
 
 		if (controls.ACCEPT) {
 			openSelectedSubstate(options[curSelected]);
+		}
+
+		if (touchPad != null && touchPad.buttonC.justPressed) {
+			touchPad.active = touchPad.visible = persistentUpdate = false;
+			openSubState(new mobile.MobileControlSelectSubState());
 		}
 	}
 	
