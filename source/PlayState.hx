@@ -233,6 +233,7 @@ class PlayState extends MusicBeatState
 	public var instakillOnMiss:Bool = false;
 	public var cpuControlled:Bool = false;
 	public var practiceMode:Bool = false;
+	public var loadvideo:Bool = false;
 
 	public var botplaySine:Float = 0;
 	public var botplayTxt:FlxText;
@@ -911,6 +912,22 @@ class PlayState extends MusicBeatState
 		{
 			case 'stress':
 				GameOverSubstate.characterName = 'bf-holding-gf-dead';
+			case 'Evaporate':
+			    qqqeb = true;
+			case 'Sirokou':
+			    qqqeb = true;
+			case 'Sirokou-OLD':
+			    qqqeb = true;
+			case 'Chainsaw Maniac':
+			    qqqeb = true;
+			case 'Vanishing':
+			    qqqeb = true;
+			case 'Meme-Mania':
+			    qqqeb = true;
+			case 'Mucho-Mouse':
+			    qqqeb = true;
+			case 'Faded':
+			    qqqeb = true;
 		}
 
 		if(isPixelStage) {
@@ -1889,6 +1906,7 @@ class PlayState extends MusicBeatState
 	{
 		#if VIDEOS_ALLOWED
 		inCutscene = true;
+		loadvideo = true;
 
 		var filepath:String = Paths.video(name);
 		#if sys
@@ -1899,6 +1917,7 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.log.warn('Couldnt find video file: ' + name);
 			startAndEnd();
+			loadvideo = false;
 			return;
 		}
 
@@ -1909,12 +1928,14 @@ class PlayState extends MusicBeatState
 		{
 			video.dispose();
 			startAndEnd();
+			loadvideo = false;
 			return;
 		}, true);
 
 		#else
 		FlxG.log.warn('Platform not supported!');
 		startAndEnd();
+		loadvideo = false;
 		return;
 		#end
 	}
@@ -3583,7 +3604,7 @@ class PlayState extends MusicBeatState
 			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
 		}
 
-		if (controls.PAUSE || #if android FlxG.android.justReleased.BACK #else touchPad.buttonP.justPressed #end && startedCountdown && canPause)
+		if (controls.PAUSE && startedCountdown && canPause && !loadvideo || #if android FlxG.android.justReleased.BACK #else touchPad.buttonP.justPressed #end && startedCountdown && canPause && !loadvideo)
 		{
 			var ret:Dynamic = callOnLuas('onPause', [], false);
 			if(ret != FunkinLua.Function_Stop) {
