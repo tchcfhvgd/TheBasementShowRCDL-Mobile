@@ -17,6 +17,7 @@ import openfl.Lib;
 import openfl.system.System;
 #end
 
+import openfl.utils.Assets;
 /**
 	The FPS class provides an easy-to-use monitor to display
 	the current frame rate of an OpenFL project
@@ -25,7 +26,6 @@ import openfl.system.System;
 @:fileXml('tags="haxe,release"')
 @:noDebug
 #end
-
 class FPS extends TextField
 {
 	/**
@@ -47,7 +47,7 @@ class FPS extends TextField
 		currentFPS = 0;
 		selectable = false;
 		mouseEnabled = false;
-		defaultTextFormat = new TextFormat(Paths.font('vcr.ttf'), 20, color);
+		defaultTextFormat = new TextFormat(Assets.getFont("assets/fonts/vcr.ttf").fontName, 18, color);
 		autoSize = LEFT;
 		multiline = true;
 		text = "FPS: ";
