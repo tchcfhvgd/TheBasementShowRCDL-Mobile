@@ -298,7 +298,7 @@ class MobileControlSelectSubState extends MusicBeatSubstate
 		if (optionName == 'Pad-Custom')
 		{
 			positionText.visible = positionTextBg.visible = true;
-			positionText.text = 'LEFT X: ${control.touchPad.buttonLeft.x} - Y: ${control.touchPad.buttonLeft.y}\nDOWN X: ${control.touchPad.buttonDown.x} - Y: ${control.touchPad.buttonDown.y}\n\nUP X: ${control.touchPad.buttonUp.x} - Y: ${control.touchPad.buttonUp.y}\nRIGHT X: ${control.touchPad.buttonRight.x} - Y: ${control.touchPad.buttonRight.y}\n'S X: ${control.touchPad.buttonExtra.x} - Y: ${control.touchPad.buttonExtra.y}';
+			positionText.text = 'LEFT X: ${control.touchPad.buttonLeft.x} - Y: ${control.touchPad.buttonLeft.y}\nDOWN X: ${control.touchPad.buttonDown.x} - Y: ${control.touchPad.buttonDown.y}\n\nUP X: ${control.touchPad.buttonUp.x} - Y: ${control.touchPad.buttonUp.y}\nRIGHT X: ${control.touchPad.buttonRight.x} - Y: ${control.touchPad.buttonRight.y}\nS X: ${control.touchPad.buttonExtra.x} - Y: ${control.touchPad.buttonExtra.y}';
 			positionText.setPosition(0, (((positionTextBg.height - positionText.height) / 2) + positionTextBg.y));
 		}
 		else
