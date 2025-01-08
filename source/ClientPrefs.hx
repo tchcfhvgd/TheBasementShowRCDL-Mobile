@@ -8,7 +8,7 @@ import Controls;
 
 class ClientPrefs {
 	// Mobile and Mobile Controls Releated
-	public static var extraButtons:String = "NONE"; // mobile extra button option
+	public static var extraButtons:String = "SINGLE"; // mobile extra button option
 	public static var hitboxPos:Bool = true; // hitbox extra button position option
 	public static var controlsAlpha:Float = FlxG.onMobile ? 0.6 : 0;
 	public static var screensaver:Bool = false;
@@ -32,7 +32,7 @@ class ClientPrefs {
 	public static var shaders:Bool = true;
 	public static var cursing:Bool = true;
 	public static var violence:Bool = true;
-	public static var cheaterOn:Bool = false;
+	public static var cheaterOn:Bool = true;
 	public static var camZooms:Bool = true;
 	public static var hideHud:Bool = false;
 	public static var noteOffset:Int = 0;
