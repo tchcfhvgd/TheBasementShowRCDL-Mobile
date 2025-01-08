@@ -87,6 +87,7 @@ class OptionsState extends MusicBeatState
 
 		changeSelection();
 		ClientPrefs.saveSettings();
+		PlayState.qqqeb = true;
 
 		addTouchPad("UP_DOWN", "A_B_C");
 		
