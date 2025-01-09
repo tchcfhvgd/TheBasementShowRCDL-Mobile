@@ -7,4 +7,3 @@ function onEndSong()
      end
 return Function_Continue;
 end
-
