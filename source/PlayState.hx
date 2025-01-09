@@ -912,21 +912,21 @@ class PlayState extends MusicBeatState
 		{
 			case 'stress':
 				GameOverSubstate.characterName = 'bf-holding-gf-dead';
-			case 'Evaporate':
+			case 'evaporate':
 			    qqqeb = true;
-			case 'Sirokou':
+			case 'sirokou':
 			    qqqeb = true;
-			case 'Sirokou-OLD':
+			case 'sirokou-old':
 			    qqqeb = true;
-			case 'Chainsaw Maniac':
+			case 'chainsaw maniac':
 			    qqqeb = true;
-			case 'Vanishing':
+			case 'vanishing':
 			    qqqeb = true;
-			case 'Meme-Mania':
+			case 'meme-mania':
 			    qqqeb = true;
-			case 'Mucho-Mouse':
+			case 'mucho-mouse':
 			    qqqeb = true;
-			case 'Faded':
+			case 'faded':
 			    qqqeb = true;
 		}
 
