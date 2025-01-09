@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Butch Back.png">
+<SubTexture name="D0000" x="8577" y="5173" width="1606" height="1690" frameX="-185" frameY="-190" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="D0001" x="1913" y="6762" width="1547" height="1756" frameX="-189" frameY="-126" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0000" x="5346" y="0" width="1346" height="1945" frameX="-302" frameY="-20" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0001" x="3031" y="2647" width="1436" height="1963" frameX="-302" frameY="-36" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0002" x="1674" y="2647" width="1357" height="1968" frameX="-318" frameY="-20" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0003" x="6692" y="1944" width="1344" height="1943" frameX="-318" frameY="-36" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0004" x="1356" y="4827" width="1354" height="1933" frameX="-302" frameY="-36" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0005" x="2710" y="4827" width="1355" height="1926" frameX="-302" frameY="-36" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0006" x="0" y="4827" width="1356" height="1935" frameX="-302" frameY="-20" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0007" x="0" y="4827" width="1356" height="1935" frameX="-302" frameY="-20" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0008" x="0" y="4827" width="1356" height="1935" frameX="-302" frameY="-20" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="I0009" x="0" y="4827" width="1356" height="1935" frameX="-302" frameY="-20" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="L0000" x="8577" y="1738" width="2540" height="1736" frameX="0" frameY="0" frameWidth="3000" frameHeight="1698" />
+<SubTexture name="L0001" x="3460" y="6762" width="2594" height="1738" frameX="0" frameY="0" frameWidth="3000" frameHeight="1698" />
+<SubTexture name="R0000" x="5874" y="4827" width="1913" height="1780" frameX="-111" frameY="-181" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="R0001" x="4065" y="4827" width="1809" height="1870" frameX="-111" frameY="-85" frameWidth="2000" frameHeight="2000" />
+<SubTexture name="U0000" x="1217" y="0" width="1362" height="2325" frameX="-333" frameY="-108" frameWidth="2000" frameHeight="2500" />
+<SubTexture name="U0001" x="3941" y="0" width="1405" height="2211" frameX="-317" frameY="-220" frameWidth="2000" frameHeight="2500" />
+<SubTexture name="missD0000" x="6692" y="0" width="1885" height="1944" frameX="-77" frameY="-315" frameWidth="2000" frameHeight="2300" />
+<SubTexture name="missD0001" x="0" y="2647" width="1674" height="2180" frameX="-109" frameY="-80" frameWidth="2000" frameHeight="2300" />
+<SubTexture name="missL0000" x="8577" y="0" width="2542" height="1738" frameX="0" frameY="0" frameWidth="2649" frameHeight="1698" />
+<SubTexture name="missL0001" x="0" y="8542" width="2689" height="1634" frameX="0" frameY="-103" frameWidth="2649" frameHeight="1698" />
+<SubTexture name="missR0000" x="8577" y="3474" width="2027" height="1699" frameX="0" frameY="-80" frameWidth="1987" frameHeight="1740" />
+<SubTexture name="missR0001" x="0" y="6762" width="1913" height="1780" frameX="0" frameY="0" frameWidth="1987" frameHeight="1740" />
+<SubTexture name="missU0000" x="0" y="0" width="1217" height="2647" frameX="-403" frameY="0" frameWidth="2000" frameHeight="2607" />
+<SubTexture name="missU0001" x="2579" y="0" width="1362" height="2325" frameX="-339" frameY="-320" frameWidth="2000" frameHeight="2607" />
+</TextureAtlas>

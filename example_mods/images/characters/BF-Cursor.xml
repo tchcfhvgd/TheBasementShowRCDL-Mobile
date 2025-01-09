@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="BF-Cursor.png">
+<SubTexture name="D0000" x="332" y="391" width="110" height="121" frameX="-448" frameY="-216" frameWidth="960" frameHeight="540" />
+<SubTexture name="D0001" x="508" y="0" width="107" height="122" frameX="-452" frameY="-209" frameWidth="960" frameHeight="540" />
+<SubTexture name="D0002" x="508" y="122" width="106" height="121" frameX="-454" frameY="-207" frameWidth="960" frameHeight="540" />
+<SubTexture name="D0003" x="508" y="243" width="106" height="121" frameX="-454" frameY="-206" frameWidth="960" frameHeight="540" />
+<SubTexture name="I0000" x="201" y="0" width="101" height="134" frameX="-448" frameY="-187" frameWidth="960" frameHeight="540" />
+<SubTexture name="I0001" x="100" y="0" width="101" height="135" frameX="-448" frameY="-186" frameWidth="960" frameHeight="540" />
+<SubTexture name="I0002" x="0" y="0" width="100" height="136" frameX="-448" frameY="-185" frameWidth="960" frameHeight="540" />
+<SubTexture name="L0000" x="110" y="391" width="113" height="122" frameX="-410" frameY="-200" frameWidth="960" frameHeight="540" />
+<SubTexture name="L0001" x="442" y="391" width="114" height="121" frameX="-417" frameY="-202" frameWidth="960" frameHeight="540" />
+<SubTexture name="L0002" x="0" y="391" width="110" height="122" frameX="-424" frameY="-202" frameWidth="960" frameHeight="540" />
+<SubTexture name="L0003" x="223" y="391" width="109" height="122" frameX="-426" frameY="-202" frameWidth="960" frameHeight="540" />
+<SubTexture name="R0000" x="0" y="266" width="103" height="125" frameX="-526" frameY="-175" frameWidth="960" frameHeight="540" />
+<SubTexture name="R0001" x="103" y="266" width="103" height="124" frameX="-517" frameY="-183" frameWidth="960" frameHeight="540" />
+<SubTexture name="R0002" x="206" y="266" width="102" height="123" frameX="-512" frameY="-188" frameWidth="960" frameHeight="540" />
+<SubTexture name="R0003" x="406" y="0" width="102" height="123" frameX="-509" frameY="-189" frameWidth="960" frameHeight="540" />
+<SubTexture name="U0000" x="104" y="136" width="104" height="129" frameX="-474" frameY="-173" frameWidth="960" frameHeight="540" />
+<SubTexture name="U0001" x="0" y="136" width="104" height="130" frameX="-474" frameY="-180" frameWidth="960" frameHeight="540" />
+<SubTexture name="U0002" x="302" y="129" width="104" height="128" frameX="-472" frameY="-185" frameWidth="960" frameHeight="540" />
+<SubTexture name="U0003" x="302" y="0" width="104" height="129" frameX="-472" frameY="-187" frameWidth="960" frameHeight="540" />
+<SubTexture name="miss0000" x="406" y="123" width="94" height="123" frameX="-467" frameY="-206" frameWidth="960" frameHeight="540" />
+<SubTexture name="miss0001" x="406" y="123" width="94" height="123" frameX="-467" frameY="-206" frameWidth="960" frameHeight="540" />
+<SubTexture name="miss0002" x="406" y="123" width="94" height="123" frameX="-467" frameY="-206" frameWidth="960" frameHeight="540" />
+<SubTexture name="miss0003" x="406" y="123" width="94" height="123" frameX="-467" frameY="-206" frameWidth="960" frameHeight="540" />
+<SubTexture name="miss0004" x="406" y="123" width="94" height="123" frameX="-467" frameY="-206" frameWidth="960" frameHeight="540" />
+<SubTexture name="miss0005" x="406" y="123" width="94" height="123" frameX="-467" frameY="-206" frameWidth="960" frameHeight="540" />
+<SubTexture name="miss0006" x="406" y="123" width="94" height="123" frameX="-467" frameY="-206" frameWidth="960" frameHeight="540" />
+<SubTexture name="miss0007" x="406" y="123" width="94" height="123" frameX="-467" frameY="-206" frameWidth="960" frameHeight="540" />
+</TextureAtlas>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Mad Scientist OLD.png">
+<SubTexture name="Mad Scientist I0000" x="0" y="1081" width="589" height="1059" frameX="-139" frameY="-506" frameWidth="1080" frameHeight="1920" />
+<SubTexture name="Mad Scientist I0001" x="589" y="1081" width="590" height="1059" frameX="-142" frameY="-506" frameWidth="1080" frameHeight="1920" />
+<SubTexture name="Mad Scientist I0002" x="1707" y="0" width="577" height="1072" frameX="-147" frameY="-493" frameWidth="1080" frameHeight="1920" />
+<SubTexture name="Mad Scientist I0003" x="1136" y="0" width="571" height="1078" frameX="-148" frameY="-487" frameWidth="1080" frameHeight="1920" />
+<SubTexture name="Mad Scientist I0004" x="567" y="0" width="569" height="1080" frameX="-148" frameY="-485" frameWidth="1080" frameHeight="1920" />
+<SubTexture name="Mad Scientist I0005" x="0" y="0" width="567" height="1081" frameX="-148" frameY="-484" frameWidth="1080" frameHeight="1920" />
+</TextureAtlas>

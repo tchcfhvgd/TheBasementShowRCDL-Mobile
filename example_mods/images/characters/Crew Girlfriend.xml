@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Crew Girlfriend.png">
+<SubTexture name="I0000" x="0" y="0" width="754" height="775" frameX="-175" frameY="-349" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="I0001" x="754" y="0" width="764" height="759" frameX="-185" frameY="-348" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="I0002" x="0" y="775" width="759" height="752" frameX="-194" frameY="-345" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="I0003" x="759" y="775" width="743" height="756" frameX="-197" frameY="-344" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="I0004" x="0" y="1531" width="734" height="757" frameX="-199" frameY="-346" frameWidth="1280" frameHeight="1280" />
+</TextureAtlas>

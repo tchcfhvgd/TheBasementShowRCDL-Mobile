@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="GF SCREEN.png">
+<SubTexture name="I0000" x="676" y="0" width="689" height="546" frameX="-165" frameY="-34" frameWidth="966" frameHeight="540" />
+<SubTexture name="I0001" x="0" y="555" width="679" height="553" frameX="-170" frameY="-27" frameWidth="966" frameHeight="540" />
+<SubTexture name="I0002" x="679" y="555" width="676" height="555" frameX="-171" frameY="-25" frameWidth="966" frameHeight="540" />
+<SubTexture name="I0003" x="0" y="1110" width="676" height="555" frameX="-171" frameY="-25" frameWidth="966" frameHeight="540" />
+<SubTexture name="I0004" x="0" y="0" width="676" height="555" frameX="-171" frameY="-25" frameWidth="966" frameHeight="540" />
+</TextureAtlas>
