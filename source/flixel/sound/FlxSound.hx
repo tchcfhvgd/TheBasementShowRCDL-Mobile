@@ -584,7 +584,7 @@ class FlxSound extends FlxBasic
 	 * Call after adjusting the volume to update the sound channel's settings.
 	 */
 	@:allow(flixel.system.FlxSoundGroup)
-	function updateTransform():Void
+	public function updateTransform():Void
 	{
 		if (_transform == null)
 			return;
