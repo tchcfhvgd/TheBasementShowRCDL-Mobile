@@ -29,9 +29,6 @@ class FlashingState extends MusicBeatState
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
-
-		final buttonBack:String = controls.mobileC ? 'B' : 'ESCAPE';
-		final buttonAccept:String = controls.mobileC ? 'A' : 'ENTER';
 		
 		warn = new FlxText(0, 30, FlxG.width,
 			"Hey, watch out!",
@@ -41,7 +38,7 @@ class FlashingState extends MusicBeatState
 		add(warn);
 
 		warnText = new FlxText(0, 30, FlxG.width,
-			'This Project contains some flashing lights!, gore, and screen shake\nCase You Have Seisure, Press ENTER to disable them now or go to Options Menu.\nElse, Press ESCAPE to ignore this message.\n\nEnjoy The Show...',
+			'This Project contains some flashing lights!, gore, and screen shake\nCase You Have Seisure, Press A to disable them now or go to Options Menu.\nElse, Press B to ignore this message.\n\nEnjoy The Show...',
 			32);
 		warnText.setFormat(Paths.font("vcr.ttf"), 34, FlxColor.WHITE, CENTER);
 		warnText.applyMarkup(
@@ -68,11 +65,11 @@ class FlashingState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		if(!leftState) {
-			if (FlxG.keys.justPressed.ENTER || FlxG.keys.justPressed.ESCAPE) {
+			if (controls.ACCEPT || controls.BACK) {
 				leftState = true;
 				FlxTransitionableState.skipNextTransIn = true;
 				FlxTransitionableState.skipNextTransOut = true;
-				if(FlxG.keys.justPressed.ENTER) {
+				if(controls.ACCEPT) {
 					FlxG.save.data.firstTime = false;
 					FlxTween.tween(myeyes, {alpha: 1}, 1);
 					FlxG.sound.play(Paths.sound('confirmMenu'));
@@ -83,7 +80,7 @@ class FlashingState extends MusicBeatState
 							MusicBeatState.switchState(new ShadersState());
 						});
 					});
-				} else if (FlxG.keys.justPressed.ESCAPE) {
+				} else if (controls.BACK) {
 					FlxG.save.data.flashing = false;
 					FlxG.sound.play(Paths.sound('cancelMenu'));
 					FlxTween.tween(warnText, {alpha: 0}, 1, {
