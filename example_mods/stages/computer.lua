@@ -51,7 +51,7 @@ function onUpdatePost(elapsed)
 end
     
 function onDestroy()
-    setPropertyFromClass('flixel.FlxG', 'mouse.visible', true);
+    setPropertyFromClass('flixel.FlxG', 'mouse.visible', false);
     runHaxeCode('FlxG.mouse.unload();')
 end
 
