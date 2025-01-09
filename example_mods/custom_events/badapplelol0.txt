@@ -1,0 +1,7 @@
+Bad Pineapple
+
+Value 1
+0 = Turn off
+2 = Turn on
+Event by Devel San
+Modified by Maxplay Games

@@ -1,0 +1,8 @@
+Set how big the chrom beat will become.
+(required chromaticShader)
+Value 1: How Much You Want It To
+Value 2: Nothing!!
+0.2 = Default | 0.5 = Semi-Intense Part
+1 = Intense Part | 2 = Super Intense Part
+NOTE: Don't Past 0.1 That will make it reversed.
+Event by Mr Sropical

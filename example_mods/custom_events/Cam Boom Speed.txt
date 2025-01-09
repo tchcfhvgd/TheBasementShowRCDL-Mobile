@@ -1,0 +1,2 @@
+Value 1: Zoom Per Beat
+Value 2: Intensity

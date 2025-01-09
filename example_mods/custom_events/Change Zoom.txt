@@ -1,0 +1,5 @@
+Sets How Much Zoomed The Cam Is
+
+value 1: camera zoom, camera speed (example: 1.3, 0.5)
+value 2: tween style (Cool Examples: back,elastic,bounce,expo,quad,sine)
+(Leaving v2 Blank = Linear)

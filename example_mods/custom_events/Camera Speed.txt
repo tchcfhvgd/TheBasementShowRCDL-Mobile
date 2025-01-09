@@ -1,0 +1,9 @@
+Sets How Fast The Camera Will Be For Ya
+
+Value 1: Camera Speed
+Value 2: Nothing
+
+1/Leaving Blank = Default Speed
+Anything Higher Than 1 = More Speed
+Anything Less Than 1 = Less Speed (0 Makes The Camera Never Follows)
+1000 = Extremly Fast (Basically A Camera Snapping) -- Use It On Those.

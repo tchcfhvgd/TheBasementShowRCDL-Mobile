@@ -1,0 +1,2 @@
+Value 1 - Name of the Image [IF/...]
+Value 2 - Duration

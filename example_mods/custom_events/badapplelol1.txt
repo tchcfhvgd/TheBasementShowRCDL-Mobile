@@ -1,0 +1,7 @@
+THE BG WHITE COVER EVERYTHING!
+
+Value 1: 'a' to make the BG white and characters black, 'b' to undo.
+Value 2: Silhouette Fade In/Out Time.
+
+Script by Saltyboii#2461
+Edited by Maxplay Games

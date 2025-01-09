@@ -1,0 +1,8 @@
+THIS EVENT IS ONLY SPLATTER EXCLUSIVE GO TO THE 
+CODE TO MAKE IT FOR OTHER SONGS
+
+Sets The Camera Pos
+
+value 1: Camera Pos (bf, dad, gf)
+value 2: Can It Go Back 
+True = Yes,  False Or Blank: No
