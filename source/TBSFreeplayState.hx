@@ -62,8 +62,8 @@ class TBSFreeplayState extends MusicBeatState
 
 	override function create()
 	{
-		Paths.clearStoredMemory();
-		Paths.clearUnusedMemory();
+		//Paths.clearStoredMemory();
+		//Paths.clearUnusedMemory();
 		
 		BG = new FlxSprite().loadGraphic(Paths.image('freeplay/backBG'));
 		BG.updateHitbox();
