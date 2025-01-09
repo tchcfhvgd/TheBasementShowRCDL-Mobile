@@ -1,15 +1,13 @@
 function onCreatePost()
-    makeLuaSprite("Shader1")
-    setSpriteShader("Shader1", "ntsc")
     
     makeLuaSprite("Shader2")
     setSpriteShader("Shader2", "effect weird")
     
     runHaxeCode([[
     trace(ShaderFilter);
-    game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+    game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader2").shader)]);
     
-    game.camHUD.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+    game.camHUD.setFilters([new ShaderFilter(game.getLuaObject("Shader2").shader)]);
     ]])
 end
 
