@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="fight_button.png">
+	<!-- Created with Adobe Animate version 22.0.8.217 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="fight able0000" x="0" y="0" width="277" height="106"/>
+	<SubTexture name="fight unable0000" x="277" y="0" width="277" height="106"/>
+</TextureAtlas>
