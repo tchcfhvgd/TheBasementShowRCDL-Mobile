@@ -13,10 +13,6 @@ local mouseFollow = true
 function onUpdate(elapsed)
     triggerEvent('Camera Follow Pos',xx,yy)
 
-    if mouseClicked("left") and getProperty('boyfriend.x') >= 401 and getProperty('boyfriend.x') <= 587 and getProperty('boyfriend.y') >= 89 and getProperty('boyfriend.y') <= 401 then
-        os.execute("start https://www.ebay.com/itm/234056755363")
-    end
-
     if getProperty('boyfriend.x') >= 900 or getProperty('boyfriend.x') <= -513 or getProperty('boyfriend.y') <= -240 then
     setProperty('boyfriend.alpha', 0)
     else
