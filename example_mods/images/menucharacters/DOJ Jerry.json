@@ -1,0 +1,11 @@
+{
+	"confirm_anim": "A",
+	"idle_anim": "I",
+	"position": [
+		-330,
+		-285
+	],
+	"scale": 0.35,
+	"image": "DOJ Jerry",
+	"flipX": false
+}

@@ -1,0 +1,11 @@
+{
+	"confirm_anim": "A",
+	"idle_anim": "I",
+	"position": [
+		-290,
+		-277
+	],
+	"scale": 0.35,
+	"image": "Depressive Tom",
+	"flipX": true
+}

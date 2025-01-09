@@ -1,0 +1,11 @@
+{
+	"confirm_anim": "A",
+	"idle_anim": "I",
+	"position": [
+		-330,
+		-255
+	],
+	"scale": 0.4,
+	"image": "Pibby Tom",
+	"flipX": false
+}

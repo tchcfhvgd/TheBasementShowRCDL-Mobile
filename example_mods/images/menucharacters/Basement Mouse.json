@@ -1,0 +1,11 @@
+{
+	"confirm_anim": "A",
+	"idle_anim": "I",
+	"position": [
+		-280,
+		-285
+	],
+	"scale": 0.3,
+	"image": "Basement Mouse",
+	"flipX": false
+}

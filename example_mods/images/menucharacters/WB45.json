@@ -1,0 +1,11 @@
+{
+	"confirm_anim": "A",
+	"idle_anim": "I",
+	"position": [
+		-210,
+		-160
+	],
+	"scale": 0.35,
+	"image": "WB45",
+	"flipX": false
+}
