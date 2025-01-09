@@ -7,9 +7,9 @@ name: Build
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -46,10 +46,10 @@ jobs:
           haxelib setup ~/haxelib
           haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp
           haxelib git lime https://github.com/mcagabe19-stuff/lime-8.2.1
-          haxelib install openfl 9.2.2
-          haxelib install flixel 5.2.2
-          haxelib install flixel-ui 2.5.0
-          haxelib install flixel-addons 3.0.2
+          haxelib install openfl 9.1.0
+          haxelib install flixel 4.11.0
+          haxelib install flixel-ui 2.4.0
+          haxelib install flixel-addons 2.11.0
           haxelib install hxvlc 1.7.1
           haxelib install hscript
           haxelib git linc_luajit https://github.com/MobilePorting/linc_luajit-0.6.3
