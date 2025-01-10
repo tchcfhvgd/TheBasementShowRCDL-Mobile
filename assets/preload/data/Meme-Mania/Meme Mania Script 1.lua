@@ -29,7 +29,10 @@ function onBeatHit()
 	setShaderFloat('Shader3','iTime', loling)
 	runHaxeCode([[
 	trace(ShaderFilter);
+	if(ClientPrefs.shaders)
+	{
 	game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader3").shader)]);
+	}
 	]])
 	end
 	if curBeat == 530 then
