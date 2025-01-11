@@ -26,9 +26,9 @@ jobs:
         uses: actions/checkout@main
 
       - name: Setup Haxe
-        uses: krdlab/setup-haxe@master
+        uses: krdlab/setup-haxe@v1.2.0
         with:
-          haxe-version: 4.3.6
+          haxe-version: 4.2.5
       
       - name: Restore Previous Cache
         id: cache-debug-build-android-restore
@@ -47,9 +47,9 @@ jobs:
           haxelib git hxcpp https://github.com/mcagabe19-stuff/hxcpp
           haxelib git lime https://github.com/tchcfhvgd/lime-8.2.2
           haxelib install openfl 9.2.2
-          haxelib install flixel 5.3.1
+          haxelib install flixel 5.2.2
           haxelib install flixel-ui 2.5.0
-          haxelib install flixel-addons 3.1.1
+          haxelib install flixel-addons 3.0.2
           haxelib install hxvlc 1.7.1
           haxelib install hscript
           haxelib git linc_luajit https://github.com/MobilePorting/linc_luajit-0.6.3
