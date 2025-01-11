@@ -5,7 +5,7 @@ import flixel.animation.FlxAnimationController;
 class PsychAnimationController extends FlxAnimationController {
       public static var globalSpeed:Float = 1;
 	public var followGlobalSpeed:Bool = true;
-	public function update(elapsed:Float):Void
+	public override function update(elapsed:Float):Void
 	{
 		if (_curAnim != null)
 		{
