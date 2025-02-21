@@ -1,5 +1,6 @@
 package;
 
+import haxe.io.Bytes;
 import animateatlas.AtlasFrameMaker;
 import flixel.math.FlxPoint;
 import flixel.graphics.frames.FlxFrame.FlxFrameAngle;
@@ -58,8 +59,7 @@ class Paths
 	public static var dumpExclusions:Array<String> =
 	[
 		'assets/music/freakyMenu.$SOUND_EXT',
-		'assets/shared/music/breakfast.$SOUND_EXT',
-		'assets/shared/music/tea-time.$SOUND_EXT',
+		'assets/music/freakyMenu.$SOUND_EXT',
 		'assets/mobile/touchpad/bg.png'
 	];
 	/// haya I love you for the base cache dump I took to the max
@@ -115,7 +115,7 @@ class Paths
 		}
 		// flags everything to be cleared out next unused memory clear
 		localTrackedAssets = [];
-		openfl.Assets.cache.clear("songs");
+		#if !html5 openfl.Assets.cache.clear("songs"); #end
 	}
 
 	static public var currentModDirectory:String = '';
@@ -129,6 +129,7 @@ class Paths
 	{
 		if (library == "mobile")
 			return getPreloadPath('mobile/$file');
+		
 		if (library != null)
 			return getLibraryPath(file, library);
 
@@ -206,7 +207,9 @@ class Paths
 			return file;
 		}
 		#end
-		return 'assets/videos/$key.$VIDEO_EXT';
+		var path:String = 'assets/videos/$key.$VIDEO_EXT';
+		localTrackedAssets.push(path);
+		return path;
 	}
 
 	static public function sound(key:String, ?library:String):Sound
@@ -228,22 +231,31 @@ class Paths
 
 	inline static public function voices(song:String):Any
 	{
+		#if html5
+		return 'songs:assets/songs/${formatToSongPath(song)}/Voices.$SOUND_EXT';
+		#else
+
 		var songKey:String = '${formatToSongPath(song)}/Voices';
 		var voices = returnSound('songs', songKey);
 		return voices;
+		#end
 	}
 
 	inline static public function inst(song:String):Any
 	{
+		#if html5
+		return 'songs:assets/songs/${formatToSongPath(song)}/Inst.$SOUND_EXT';
+		#else
 		var songKey:String = '${formatToSongPath(song)}/Inst';
 		var inst = returnSound('songs', songKey);
 		return inst;
+		#end
 	}
 
-	inline static public function image(key:String, ?library:String):FlxGraphic
+	inline static public function image(key:String, ?library:String, prefix:String = "images/"):FlxGraphic
 	{
 		// streamlined the assets process more
-		var returnAsset:FlxGraphic = returnGraphic(key, library);
+		var returnAsset:FlxGraphic = returnGraphic(key, library, prefix);
 		return returnAsset;
 	}
 
@@ -273,6 +285,10 @@ class Paths
 		}
 		#end
 		return Assets.getText(getPath(key, TEXT));
+	}
+
+	static public function getText(key:String, ?ignoreMods:Bool = false) {
+		return getTextFromFile(key, ignoreMods);
 	}
 
 	inline static public function font(key:String)
@@ -341,9 +357,9 @@ class Paths
 
 	// completely rewritten asset loading? fuck!
 	public static var currentTrackedAssets:Map<String, FlxGraphic> = [];
-	public static function returnGraphic(key:String, ?library:String) {
+	public static function returnGraphic(key:String, ?library:String, prefix:String = "images/") {
 		#if MODS_ALLOWED
-		var modKey:String = modsImages(key);
+		var modKey:String = modsImages(key, prefix);
 		if(FileSystem.exists(modKey)) {
 			if(!currentTrackedAssets.exists(modKey)) {
 				var newBitmap:BitmapData = BitmapData.fromFile(modKey);
@@ -356,7 +372,7 @@ class Paths
 		}
 		#end
 
-		var path = getPath('images/$key.png', IMAGE, library);
+		var path = getPath(prefix + '$key.png', IMAGE, library);
 		//trace(path);
 		if (OpenFlAssets.exists(path, IMAGE)) {
 			if(!currentTrackedAssets.exists(path)) {
@@ -367,7 +383,7 @@ class Paths
 			localTrackedAssets.push(path);
 			return currentTrackedAssets.get(path);
 		}
-		trace('oh no its returning null NOOOO');
+		trace('oh no its returning null NOOOO', key, library);
 		return null;
 	}
 
@@ -384,7 +400,7 @@ class Paths
 		}
 		#end
 		// I hate this so god damn much
-		var gottenPath:String = #if mobile Sys.getCwd() + #end getPath('$path/$key.$SOUND_EXT', SOUND, library);
+		var gottenPath:String = getPath('$path/$key.$SOUND_EXT', SOUND, library);
 		gottenPath = gottenPath.substring(gottenPath.indexOf(':') + 1, gottenPath.length);
 		// trace(gottenPath);
 		if(!currentTrackedSounds.exists(gottenPath))
@@ -423,8 +439,8 @@ class Paths
 		return modFolders(path + '/' + key + '.' + SOUND_EXT);
 	}
 
-	inline static public function modsImages(key:String) {
-		return modFolders('images/' + key + '.png');
+	inline static public function modsImages(key:String, prefix:String = "images/") {
+		return modFolders(prefix + key + '.png');
 	}
 
 	inline static public function modsXml(key:String) {
@@ -474,7 +490,7 @@ class Paths
 	static public function pushGlobalMods() // prob a better way to do this but idc
 	{
 		globalMods = [];
-		var path:String = #if mobile Sys.getCwd() + #end 'modsList.txt';
+		var path:String = 'modsList.txt';
 		if(FileSystem.exists(path))
 		{
 			var list:Array<String> = CoolUtil.coolTextFile(path);
@@ -517,6 +533,62 @@ class Paths
 		return list;
 	}
 	#end
+
+	static public function getBytes(key:String, ?ignoreMods:Bool = false):Bytes
+	{
+		#if sys
+		#if MODS_ALLOWED
+		if (!ignoreMods && FileSystem.exists(modFolders(key)))
+			return File.getBytes(modFolders(key));
+		#end
+
+		if (FileSystem.exists(getPreloadPath(key)))
+			return File.getBytes(getPreloadPath(key));
+
+		if (currentLevel != null)
+		{
+			var levelPath:String = '';
+			if(currentLevel != 'shared') {
+				levelPath = getLibraryPathForce(key, currentLevel);
+				if (FileSystem.exists(levelPath))
+					return File.getBytes(levelPath);
+			}
+
+			levelPath = getLibraryPathForce(key, 'shared');
+			if (FileSystem.exists(levelPath))
+				return File.getBytes(levelPath);
+		}
+		#end
+		return Assets.getBytes(getPath(key, TEXT));
+	}
+
+	static public function exists(key:String, ?ignoreMods:Bool = false):Bool
+	{
+		#if sys
+		#if MODS_ALLOWED
+		if (!ignoreMods && FileSystem.exists(modFolders(key)))
+			return true;
+		#end
+
+		if (FileSystem.exists(getPreloadPath(key)))
+			return true;
+
+		if (currentLevel != null)
+		{
+			var levelPath:String = '';
+			if(currentLevel != 'shared') {
+				levelPath = getLibraryPathForce(key, currentLevel);
+				if (FileSystem.exists(levelPath))
+					return true;
+			}
+
+			levelPath = getLibraryPathForce(key, 'shared');
+			if (FileSystem.exists(levelPath))
+				return true;
+		}
+		#end
+		return Assets.exists(getPath(key, TEXT));
+	}
 
 	public static function readDirectory(directory:String):Array<String>
 	{

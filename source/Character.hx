@@ -1,5 +1,6 @@
 package;
 
+import flxanimate.FlxAnimate;
 import animateatlas.AtlasFrameMaker;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -44,7 +45,7 @@ typedef AnimArray = {
 	var offsets:Array<Int>;
 }
 
-class Character extends FlxSprite
+class Character extends FlxAtlasableSprite
 {
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public var debugMode:Bool = false;
@@ -91,7 +92,6 @@ class Character extends FlxSprite
 		curCharacter = character;
 		this.isPlayer = isPlayer;
 		antialiasing = ClientPrefs.globalAntialiasing;
-		var library:String = null;
 		switch (curCharacter)
 		{
 			//case 'your character name in case you want to hardcode them instead':
@@ -121,56 +121,13 @@ class Character extends FlxSprite
 				#end
 
 				var json:CharacterFile = cast Json.parse(rawJson);
-				var spriteType = "sparrow";
-				//sparrow
-				//packer
-				//texture
-				#if MODS_ALLOWED
-				var modTxtToFind:String = Paths.modsTxt(json.image);
-				var txtToFind:String = Paths.getPath('images/' + json.image + '.txt', TEXT);
-				
-				//var modTextureToFind:String = Paths.modFolders("images/"+json.image);
-				//var textureToFind:String = Paths.getPath('images/' + json.image, new AssetType();
-				
-				if (FileSystem.exists(modTxtToFind) || FileSystem.exists(txtToFind) || Assets.exists(txtToFind))
-				#else
-				if (Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT)))
-				#end
-				{
-					spriteType = "packer";
-				}
-				
-				#if MODS_ALLOWED
-				var modAnimToFind:String = Paths.modFolders('images/' + json.image + '/Animation.json');
-				var animToFind:String = Paths.getPath('images/' + json.image + '/Animation.json', TEXT);
-				
-				//var modTextureToFind:String = Paths.modFolders("images/"+json.image);
-				//var textureToFind:String = Paths.getPath('images/' + json.image, new AssetType();
-				
-				if (FileSystem.exists(modAnimToFind) || FileSystem.exists(animToFind) || Assets.exists(animToFind))
-				#else
-				if (Assets.exists(Paths.getPath('images/' + json.image + '/Animation.json', TEXT)))
-				#end
-				{
-					spriteType = "texture";
-				}
-
-				switch (spriteType){
-					
-					case "packer":
-						frames = Paths.getPackerAtlas(json.image);
-					
-					case "sparrow":
-						frames = Paths.getSparrowAtlas(json.image);
-					
-					case "texture":
-						frames = AtlasFrameMaker.construct(json.image);
-				}
 				imageFile = json.image;
+
+				reloadImage(imageFile);
 
 				if(json.scale != 1) {
 					jsonScale = json.scale;
-					setGraphicSize(Std.int(width * jsonScale));
+					scale.set(jsonScale, jsonScale);
 					updateHitbox();
 				}
 
@@ -254,6 +211,55 @@ class Character extends FlxSprite
 		}
 	}
 
+	public function reloadImage(imageName:String) {
+		var animateExists:Bool = Paths.exists('images/' + imageName + '/Animation.json');
+		//frames = null;
+		animateAtlas = null;
+		animation.animateAtlas = null;
+
+		if (animateExists) {
+			animateAtlas = new FlxAnimate(x, y, 'images/' + imageName);
+			animation.animateAtlas = animateAtlas;
+		} else {
+			frames = getImage(imageName);
+		}
+	}
+
+	function getImage(imageName:String) {
+		var spriteType = "sparrow";
+
+		#if MODS_ALLOWED
+		var modTxtToFind:String = Paths.modsTxt(imageName);
+		var txtToFind:String = Paths.getPath('images/' + imageName + '.txt', TEXT);
+
+		if (FileSystem.exists(modTxtToFind) || FileSystem.exists(txtToFind) || Assets.exists(txtToFind))
+		#else
+		if (Assets.exists(Paths.getPath('images/' + imageName + '.txt', TEXT)))
+		#end
+		{
+			spriteType = "packer";
+		}
+
+		/*#if MODS_ALLOWED
+		var modAnimToFind:String = Paths.modFolders('images/' + imageName + '/Animation.json');
+		var animToFind:String = Paths.getPath('images/' + imageName + '/Animation.json', TEXT);
+
+		if (FileSystem.exists(modAnimToFind) || FileSystem.exists(animToFind) || Assets.exists(animToFind))
+		#else
+		if (Assets.exists(Paths.getPath('images/' + imageName + '/Animation.json', TEXT)))
+		#end
+		{
+			spriteType = "texture";
+		}*/
+
+		return switch (spriteType) {
+			case "packer": Paths.getPackerAtlas(imageName);
+			//case "texture": AtlasFrameMaker.construct(imageName);
+			case "sparrow": Paths.getSparrowAtlas(imageName);
+			default: Paths.getSparrowAtlas(imageName);
+		}
+	}
+
 	override function update(elapsed:Float)
 	{
 		if(!debugMode && animation.curAnim != null)
@@ -275,7 +281,7 @@ class Character extends FlxSprite
 				specialAnim = false;
 				dance();
 			}
-			
+
 			switch(curCharacter)
 			{
 				case 'pico-speaker':
@@ -367,7 +373,7 @@ class Character extends FlxSprite
 			}
 		}
 	}
-	
+
 	function loadMappedAnims():Void
 	{
 		var noteData:Array<SwagSection> = Song.loadFromJson('picospeaker', Paths.formatToSongPath(PlayState.SONG.song)).notes;
@@ -376,7 +382,6 @@ class Character extends FlxSprite
 				animationNotes.push(songNotes);
 			}
 		}
-		TankmenBG.animationNotes = animationNotes;
 		animationNotes.sort(sortAnims);
 	}
 
