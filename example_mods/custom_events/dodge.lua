@@ -1,6 +1,7 @@
 local onCoolDown = false
 local dodging = false
 local doingDodge = false
+local doingIt = false
 local time = 1.5
 
 function checkDodge()
@@ -16,7 +17,7 @@ function checkDodge()
 		removeLuaSprite('Warn', true)
 		playSound('chainsaw', 0.7);
 	elseif not dodging then
-        setProperty('health', 0.1)
+        setProperty('health', getProperty('health') - 1.5)
         playSound('chainsaw', 0.7);
         characterPlayAnim('boyfriend', 'singRIGHTmiss', true);
 		characterPlayAnim('dad', 'attack', true);
@@ -29,7 +30,13 @@ function checkDodge()
 end
 
 function onUpdate(elapsed)
-	if keyJustPressed('space') and 
+	if keyPressed('space') then
+    doingIt = true;
+	else
+	doingIt = false;
+	end
+
+	if doingIt and 
 	not onCoolDown and 
 	not dodging and 
 	not getProperty('cpuControlled') then

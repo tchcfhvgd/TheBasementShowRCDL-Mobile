@@ -1,5 +1,1 @@
-Value 1: Seconds inbetween the beeps.
-Value 2: Seconds until you need to press space. Usually 2x the first value.
-Original QT timing for the beeps are
-Value 1 = 0.275
-Value 2 = 0.55
+For Chainsaw Maniac only.
