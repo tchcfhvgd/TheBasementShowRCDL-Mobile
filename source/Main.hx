@@ -111,5 +111,29 @@ class Main extends Sprite
 		FlxG.android.preventDefaultKeys = [BACK]; 
 		#end
 		#end
+
+		FlxG.signals.gameResized.add(fixCameraShaders);
 	}
+
+        public static function fixCameraShaders(w:Int, h:Int) //fixes shaders after resizing the window / fullscreening
+	{
+		if (FlxG.cameras.list.length > 0)
+		{
+			for (cam in FlxG.cameras.list)
+			{
+				if (cam.flashSprite != null)
+				{
+					@:privateAccess 
+					{
+						cam.flashSprite.__cacheBitmap = null;
+						cam.flashSprite.__cacheBitmapData = null;
+						cam.flashSprite.__cacheBitmapData2 = null;
+						cam.flashSprite.__cacheBitmapData3 = null;
+						cam.flashSprite.__cacheBitmapColorTransform = null;
+					}
+				}
+			}
+		}
+	}
+
 }
