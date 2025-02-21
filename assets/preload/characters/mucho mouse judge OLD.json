@@ -5,74 +5,74 @@
 				0,
 				0
 			],
-			"loop": true,
-			"fps": 24,
+			"loop": false,
+			"fps": 14,
 			"anim": "idle",
 			"indices": [],
-			"name": "james idle"
+			"name": "I"
 		},
 		{
 			"offsets": [
-				-20,
-				180
+				0,
+				0
 			],
 			"loop": false,
-			"fps": 24,
+			"fps": 14,
 			"anim": "singLEFT",
 			"indices": [],
-			"name": "james left"
+			"name": "R"
 		},
 		{
 			"offsets": [
-				-70,
-				-140
+				0,
+				0
 			],
 			"loop": false,
-			"fps": 24,
+			"fps": 14,
 			"anim": "singDOWN",
 			"indices": [],
-			"name": "james down"
+			"name": "D"
 		},
 		{
 			"offsets": [
-				-60,
-				140
+				0,
+				-20
 			],
 			"loop": false,
-			"fps": 24,
+			"fps": 14,
 			"anim": "singUP",
 			"indices": [],
-			"name": "james up"
+			"name": "U"
 		},
 		{
 			"offsets": [
-				-80,
-				-80
+				0,
+				0
 			],
 			"loop": false,
-			"fps": 24,
+			"fps": 14,
 			"anim": "singRIGHT",
 			"indices": [],
-			"name": "james right"
+			"name": "L"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/James OLD",
+	"image": "characters/mucho mouse judge OLD",
 	"position": [
-		-100,
-		200
+		40,
+		80
 	],
-	"healthicon": "james old",
-	"flip_x": false,
+	"healthicon": "mouse-judge",
+	"flip_x": true,
 	"healthbar_colors": [
-		159,
-		92,
-		22
+		255,
+		170,
+		111
 	],
 	"camera_position": [
-		100,
-		250
+		-180,
+		-180
 	],
 	"sing_duration": 6.1,
-	"scale": 0.7
+	"scale": 1.8
 }

@@ -2,43 +2,32 @@
 	"animations": [
 		{
 			"offsets": [
-				1,
+				0,
 				0
 			],
-			"loop": false,
-			"fps": 14,
+			"indices": [],
+			"fps": 13,
 			"anim": "idle",
-			"indices": [],
-			"name": "C"
-		},
-		{
-			"offsets": [
-				0,
-				0
-			],
 			"loop": false,
-			"fps": 14,
-			"anim": "sad",
-			"indices": [],
-			"name": "A"
+			"name": "idle"
 		},
 		{
 			"offsets": [
 				0,
 				0
 			],
-			"loop": true,
-			"fps": 30,
-			"anim": "scared",
 			"indices": [],
-			"name": "B"
+			"fps": 12,
+			"anim": "sad",
+			"loop": false,
+			"name": "gf cry"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/gf-spike",
+	"image": "characters/gf-spike OLD",
 	"position": [
-		80,
-		-300
+		530,
+		100
 	],
 	"healthicon": "gf",
 	"flip_x": false,
@@ -52,5 +41,5 @@
 		0
 	],
 	"sing_duration": 4,
-	"scale": 0.7
+	"scale": 1.4
 }

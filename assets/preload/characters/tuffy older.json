@@ -5,74 +5,74 @@
 				0,
 				0
 			],
-			"loop": true,
-			"fps": 24,
+			"loop": false,
+			"fps": 12,
 			"anim": "idle",
 			"indices": [],
-			"name": "james idle"
+			"name": "I"
 		},
 		{
 			"offsets": [
-				-20,
-				180
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singLEFT",
-			"indices": [],
-			"name": "james left"
-		},
-		{
-			"offsets": [
-				-70,
-				-140
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singDOWN",
-			"indices": [],
-			"name": "james down"
-		},
-		{
-			"offsets": [
-				-60,
-				140
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "singUP",
-			"indices": [],
-			"name": "james up"
-		},
-		{
-			"offsets": [
-				-80,
+				200,
 				-80
 			],
 			"loop": false,
-			"fps": 24,
+			"fps": 12,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "L"
+		},
+		{
+			"offsets": [
+				-120,
+				-75
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "D"
+		},
+		{
+			"offsets": [
+				-67,
+				-14
+			],
+			"loop": false,
+			"fps": 12,
+			"anim": "singUP",
+			"indices": [],
+			"name": "U"
+		},
+		{
+			"offsets": [
+				-110,
+				-20
+			],
+			"loop": false,
+			"fps": 12,
 			"anim": "singRIGHT",
 			"indices": [],
-			"name": "james right"
+			"name": "R"
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/James OLD",
+	"image": "characters/Tuffy OLDER",
 	"position": [
-		-100,
-		200
+		60,
+		180
 	],
-	"healthicon": "james old",
+	"healthicon": "tuffy old",
 	"flip_x": false,
 	"healthbar_colors": [
-		159,
-		92,
-		22
+		151,
+		165,
+		178
 	],
 	"camera_position": [
-		100,
-		250
+		40,
+		-10
 	],
 	"sing_duration": 6.1,
-	"scale": 0.7
+	"scale": 1.1
 }

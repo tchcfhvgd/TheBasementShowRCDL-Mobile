@@ -14,8 +14,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				0
+				60,
+				-10
 			],
 			"anim": "singLEFT",
 			"fps": 14,
@@ -25,8 +25,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				-60
+				10,
+				0
 			],
 			"anim": "singDOWN",
 			"fps": 14,
@@ -36,8 +36,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				-30
+				-40,
+				0
 			],
 			"anim": "singUP",
 			"fps": 14,
@@ -47,8 +47,8 @@
 		{
 			"loop": false,
 			"offsets": [
-				0,
-				0
+				-48,
+				5
 			],
 			"anim": "singRIGHT",
 			"fps": 14,
@@ -57,22 +57,22 @@
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/tuffy OLD",
+	"image": "characters/Carnivore of Calamity",
 	"position": [
-		-50,
-		10
+		90,
+		130
 	],
-	"healthicon": "tuffy-2",
+	"healthicon": "TomEXE",
 	"flip_x": false,
 	"healthbar_colors": [
-		151,
-		165,
-		178
+		54,
+		53,
+		54
 	],
 	"camera_position": [
-		0,
-		0
+		-650,
+		-50
 	],
 	"sing_duration": 6.1,
-	"scale": 0.85
+	"scale": 1.5
 }
