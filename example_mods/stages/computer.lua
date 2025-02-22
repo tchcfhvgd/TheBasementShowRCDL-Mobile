@@ -64,6 +64,7 @@ end
 
 function onGameOver()
     mouseFollow = false
-    setProperty('boyfriend.x', 0)
-    setProperty('boyfriend.y', 140)
+    setProperty('boyfriend.scale.x', 2)
+    setProperty('boyfriend.x', 15)
+    setProperty('boyfriend.y', 115)
 end

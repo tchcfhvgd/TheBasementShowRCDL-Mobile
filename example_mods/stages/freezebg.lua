@@ -112,6 +112,8 @@ function onCreatePost()
 	local size = 0.8
 	setProperty('boyfriend.scale.x', size)
 	setProperty('boyfriend.scale.y', size)
+
+	setProperty('snowing.flipX', true)
 end
 
 function onUpdatePost()

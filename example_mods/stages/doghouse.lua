@@ -79,12 +79,6 @@ function onCreate()
 	setLuaSpriteScrollFactor('tree', 1.1, 1.1);
 	scaleObject('tree', 1.1, 1.1);
 	addLuaSprite('tree',true)
---cup
-	makeAnimatedLuaSprite('CUpheqdshidA','CUpheqdshidA', 0, 0)
-	setObjectCamera('CUpheqdshidA', 'camOther')
-	scaleObject('CUpheqdshidA', 1, 1);
-	addAnimationByPrefix('CUpheqdshidA','CUpheqdshid','CUpheqdshid',24,true)
-	addLuaSprite('CUpheqdshidA',true)
 --shade
 	makeLuaSprite('shade', 'shade2', 0, 0)
 	scaleObject('shade', 0.5, 0.5);
