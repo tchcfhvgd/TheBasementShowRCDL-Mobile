@@ -100,7 +100,6 @@ function createCharacter(tag)
 end
 
 function onCreate()
-    luaDebugMode = true
 
     createCharacter(characterTag);
 end
