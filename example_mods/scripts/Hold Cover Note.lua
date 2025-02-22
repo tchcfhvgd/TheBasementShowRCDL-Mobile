@@ -8,6 +8,10 @@ local holdofsets = {
 local holdfolders = "holdcover/holdCover"
 local notedatas = {"Purple","Blue","Green","Red"};
 function onCreatePost()
+    for i=0,3 do
+        setProperty("opponentStrums.members["..i.."].x", getProperty("opponentStrums.members["..i.."].x") + 20)
+    end
+
     for i = 1,#holdfolders do
         makeAnimatedLuaSprite("holdCoverEnd"..notedatas[i], holdfolders..notedatas[i], -2000,-2000)
         addLuaSprite("holdCoverEnd"..notedatas[i], true)

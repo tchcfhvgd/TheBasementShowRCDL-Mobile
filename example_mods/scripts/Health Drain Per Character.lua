@@ -9,6 +9,7 @@ function opponentNoteHit(id, direction, noteType, isSustainNote)
         dadCharacter == 'alien cat old' or
         dadCharacter == 'alien cat' or
         dadCharacter == 'alien mouse' or
+        dadCharacter == 'Carnivore of Calamity' or
         dadCharacter == 'Famished' or
         dadCharacter == 'freeze jerry rtx' or
         dadCharacter == 'freeze jerry' or
@@ -27,13 +28,14 @@ function opponentNoteHit(id, direction, noteType, isSustainNote)
         dadCharacter == 'mouse angry 2' or
         dadCharacter == 'mouse angry OLD' or
         dadCharacter == 'mouse angry' or
+        dadCharacter == 'mucho mouse judge OLD' or
         dadCharacter == 'pibby tom old' or
         dadCharacter == 'pibby tom' or
         dadCharacter == 'spike' or
-        dadCharacter == 'SpikeEXE' or
-        dadCharacter == 'TomEXE' or
+        dadCharacter == 'The Fierce Brute' or
+        dadCharacter == 'The Paltry Rat' or
+        dadCharacter == 'tuffy old' or
         dadCharacter == 'tuffy2' or
-        dadCharacter == 'TuffyEXE' or
         dadCharacter == 'WB tom 2' or
         dadCharacter == 'WB tom old' or
         dadCharacter == 'WB tom' then

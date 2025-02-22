@@ -46,8 +46,12 @@ end
     composerData = {'HeroComics', '05DBFF', 'Herocomics'}
     songData = {'383E57', 'blue-tom', 150}
 end
+    if songName == 'Tragical-Comedy OLD' then
+    composerData = {'HeroComics', '05DBFF', 'Herocomics'}
+    songData = {'383E57', 'blue-tom', 150}
+end
     if songName == 'Shattered' then
-    composerData = {'C-air', '93A1FF', 'C-air'}
+    composerData = {'C-air', '8bcdd4', 'C-air'}
     songData = {'192141', 'blue-tom2', 150}
 end
 
@@ -139,7 +143,7 @@ end
 end
     if songName == 'Jam OLD' then
     composerData = {'JerryWannaRat', '8940A6', 'JerryWannaRat'}
-    songData = {'9f5c16', 'james', 0}
+    songData = {'9f5c16', 'james old', 0}
 end
     if songName == 'Desire or Despair' then
     composerData = {'Rhodes_W', '636363', 'Rhodes_W'}
@@ -170,9 +174,9 @@ end
     songData = {'d9ffc3', 'alien-cat', 150}
 end
     if songName == 'Invade OLD' then
+    songData = {'d9ffc3', 'alien-cat', 0}
     composerData = {'CZTV-28', 'fddd00', 'CZTV'}
     charterData = {'fanhua', '633f42', 'fanhua'}
-    songData = {'d9ffc3', 'alien-cat', 0}
 end
     if songName == 'Invade OLDER' then
     composerData = {'JerryWannaRat', '8940A6', 'JerryWannaRat'}
@@ -214,9 +218,9 @@ end
     songData = {'CBD3CC', 'wheel-tom', 0}
 end
 
---FREEPLAY MIXS AND COVERS
---FREEPLAY MIXS AND COVERS
---FREEPLAY MIXS AND COVERS
+--FREEPLAY MIXES AND COVERS
+--FREEPLAY MIXES AND COVERS
+--FREEPLAY MIXES AND COVERS
 
     if songName == 'War of Whiskers' then
     composerData = {'Gh05t49_Crrr', '4D663F', 'Crrr'}
@@ -325,9 +329,12 @@ end
 --WEEK 2
 
 	if songName == 'Tragical-Comedy' or
-	songName == 'Blue' or
-	songName == 'Shattered' then
+	songName == 'Tragical-Comedy OLD' or
+	songName == 'Blue' then
 	bgName = 'songBG13'
+end
+	if songName == 'Shattered' then
+	bgName = 'songBG12'
 end
 
 --WEEK 3
@@ -423,9 +430,9 @@ end
 	bgName = 'songBG16'
 end
 
---FREEPLAY MIXS AND COVERS
---FREEPLAY MIXS AND COVERS
---FREEPLAY MIXS AND COVERS
+--FREEPLAY MIXES AND COVERS
+--FREEPLAY MIXES AND COVERS
+--FREEPLAY MIXES AND COVERS
 
     if songName == 'War of Whiskers' then
         bgName = 'songBG25'
