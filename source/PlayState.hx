@@ -1381,8 +1381,8 @@ class PlayState extends MusicBeatState
 		add(scoreTxt);
 
 		if (ClientPrefs.judjmentbool) {
-		judjTxt = new FlxText((TBSFreeplayState.chosendifficulty == 'hard' ? 100 : 10), 300, 1150, "", 20);
-		judjTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, (TBSFreeplayState.chosendifficulty == 'hard' ? RIGHT : LEFT), FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		judjTxt = new FlxText(10, 300, 1150, "", 20);
+		judjTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		judjTxt.scrollFactor.set();
 		judjTxt.borderSize = 1.5;
 		judjTxt.visible = !ClientPrefs.hideHud;
