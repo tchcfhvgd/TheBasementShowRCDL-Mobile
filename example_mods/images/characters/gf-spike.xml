@@ -1,17 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="gf-spike.png">
-	<!-- Created with Adobe Animate version 19.2.1.408 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="gf cry0000" x="0" y="0" width="714" height="480"/>
-	<SubTexture name="gf cry0001" x="714" y="0" width="714" height="480"/>
-	<SubTexture name="gf cry0002" x="0" y="480" width="714" height="480"/>
-	<SubTexture name="gf cry0003" x="0" y="480" width="714" height="480"/>
-	<SubTexture name="gf cry0004" x="0" y="480" width="714" height="480"/>
-	<SubTexture name="gf cry0005" x="0" y="480" width="714" height="480"/>
-	<SubTexture name="gf cry0006" x="0" y="480" width="714" height="480"/>
-	<SubTexture name="gf cry0007" x="0" y="480" width="714" height="480"/>
-	<SubTexture name="idle0000" x="714" y="480" width="714" height="480"/>
-	<SubTexture name="idle0001" x="0" y="960" width="714" height="480"/>
-	<SubTexture name="idle0002" x="714" y="960" width="714" height="480"/>
-	<SubTexture name="idle0003" x="0" y="1440" width="714" height="480"/>
+<SubTexture name="A0000" x="0" y="0" width="649" height="824" frameX="-334" frameY="-258" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="A0001" x="0" y="0" width="649" height="824" frameX="-334" frameY="-258" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="A0002" x="649" y="0" width="649" height="818" frameX="-334" frameY="-264" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="A0003" x="1298" y="0" width="648" height="813" frameX="-335" frameY="-269" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="A0004" x="0" y="824" width="648" height="814" frameX="-335" frameY="-268" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="A0005" x="0" y="824" width="648" height="814" frameX="-335" frameY="-268" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="B0000" x="648" y="824" width="649" height="821" frameX="-334" frameY="-261" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="B0001" x="1297" y="824" width="649" height="824" frameX="-334" frameY="-258" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="B0002" x="0" y="1648" width="649" height="824" frameX="-334" frameY="-258" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="C0000" x="649" y="1648" width="661" height="813" frameX="-323" frameY="-270" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="C0001" x="1310" y="1648" width="656" height="811" frameX="-328" frameY="-272" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="C0002" x="0" y="2472" width="654" height="818" frameX="-329" frameY="-264" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="C0003" x="654" y="2472" width="649" height="822" frameX="-334" frameY="-260" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="C0004" x="654" y="2472" width="649" height="822" frameX="-334" frameY="-260" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="C0005" x="0" y="0" width="649" height="824" frameX="-334" frameY="-258" frameWidth="1280" frameHeight="1280" />
+<SubTexture name="C0006" x="0" y="0" width="649" height="824" frameX="-334" frameY="-258" frameWidth="1280" frameHeight="1280" />
 </TextureAtlas>
