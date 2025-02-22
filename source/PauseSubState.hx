@@ -128,14 +128,6 @@ class PauseSubState extends MusicBeatSubstate
 				FlxTween.tween(char1, {x: -20}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
-			case 'house-for-sale-old':
-				char1.loadGraphic(Paths.image('pause/left-old'));
-				char1.x -= 220;
-				char1.y += 50;
-				char3.loadGraphic(Paths.image('pause/right2'));
-				FlxTween.tween(char1, {x: -20}, 0.2, {ease: FlxEase.sineInOut});
-				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
-				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
 			case 'invade':
 				char1.loadGraphic(Paths.image('pause/left11'));
 				char1.scale.set(0.85, 0.85);
@@ -145,7 +137,7 @@ class PauseSubState extends MusicBeatSubstate
 				FlxTween.tween(char1, {x: -32}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
-			case 'invade-old':
+			case 'invade old':
 				char1.loadGraphic(Paths.image('pause/left11-old'));
 				char1.scale.set(0.85, 0.85);
 				char1.x -= 220;
