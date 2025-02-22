@@ -914,6 +914,8 @@ class PlayState extends MusicBeatState
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank3', 1300, 1200, 3.5, 2.5, ['fg']));
 		}
 
+		if(ClientPrefs.mechanicsOn)
+		{
 		switch(Paths.formatToSongPath(SONG.song))
 		{
 			case 'stress':
@@ -934,6 +936,7 @@ class PlayState extends MusicBeatState
 			    qqqeb = true;
 			case 'faded':
 			    qqqeb = true;
+		}
 		}
 
 		if(isPixelStage) {
