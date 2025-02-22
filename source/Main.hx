@@ -1,5 +1,6 @@
 package;
 
+import flixel.addons.transition.FlxTransitionableState;
 import flixel.graphics.FlxGraphic;
 import flixel.FlxG;
 import flixel.FlxGame;
