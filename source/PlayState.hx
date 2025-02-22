@@ -72,6 +72,12 @@ import sys.FileSystem;
 import sys.io.File;
 #end
 
+#if VIDEOS_ALLOWED
+#if (hxCodec >= "2.6.1") import hxcodec.VideoHandler as MP4Handler;
+#elseif (hxCodec == "2.6.0") import VideoHandler as MP4Handler;
+#else import vlc.MP4Handler; #end
+#end
+
 import mobile.TouchButton;
 import mobile.TouchPad;
 import mobile.input.MobileInputID;
@@ -1921,17 +1927,15 @@ class PlayState extends MusicBeatState
 			return;
 		}
 
-		var video:FlxVideo = new FlxVideo();
-		video.load(filepath);
-		video.play();
-		video.onEndReached.add(function()
+		var video:MP4Handler = new MP4Handler();
+		video.playVideo(filepath);
+		video.canSkip = false;
+		video.finishCallback = function()
 		{
-			video.dispose();
 			startAndEnd();
 			loadvideo = false;
 			return;
-		}, true);
-
+		}
 		#else
 		FlxG.log.warn('Platform not supported!');
 		startAndEnd();
