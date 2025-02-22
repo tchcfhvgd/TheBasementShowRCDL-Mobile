@@ -87,7 +87,7 @@ class Main extends Sprite
 	private function setupGame():Void
 	{
 		ClientPrefs.loadDefaultKeys();
-		FlxTransitionableState.skipNextTransOut = true;
+		//FlxTransitionableState.skipNextTransOut = true;
 		addChild(new FlxGame(gameWidth, gameHeight, #if (mobile && MODS_ALLOWED) !CopyState.checkExistingFiles() ? CopyState : #end initialState, framerate, framerate, skipSplash, startFullscreen));
 
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
