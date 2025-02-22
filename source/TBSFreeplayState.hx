@@ -325,7 +325,7 @@ class TBSFreeplayState extends MusicBeatState
         case 'Invade' :
 		limits = 2;
         hasVersion = true;
-		case 'House-for-Sale' | 'Vanishing' | 'Sirokou' | 'Funny-Cartoon' | 'BloodNcartoon' | 'Splatter' | 'None-of-All' |
+		case 'House-for-Sale' | 'Vanishing' | 'Sirokou' | 'Tragical-Comedy' | 'Funny-Cartoon' | 'BloodNcartoon' | 'Splatter' | 'None-of-All' |
 		'Black-Humor' | 'Jam' | 'Meme-Mania' | 'War-of-Whiskers':
 		limits = 1;
 		hasVersion = true;
@@ -429,6 +429,9 @@ class TBSFreeplayState extends MusicBeatState
 	}
 	function changeSelection(change:Int = 0)
 	{
+		intendedScore = Highscore.getScore(freeplays[curSelected], 0);
+		intendedRating = Highscore.getRating(freeplays[curSelected], 0);
+		
 		curSelected += change;
 		if (curSelected < 0)
 			curSelected = freeplays.length - 1;
