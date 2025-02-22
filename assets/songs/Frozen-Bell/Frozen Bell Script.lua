@@ -1,11 +1,4 @@
 function onCreate()
-	makeLuaSprite('bl');
-	makeGraphic('bl',screenWidth,screenHeight,'000000')
-	setObjectCamera('bl', 'other')
-	setProperty('bl.scale.x',2)
-	setProperty('bl.scale.y',2)
-	addLuaSprite('bl', false);
-
 	makeLuaSprite('note', 'warningnote', 0, 0)
 	addLuaSprite('note')
 	setObjectCamera('note', 'other')
@@ -22,9 +15,6 @@ end
 end
 
 function onStepHit()
-	if curStep == 4 then
-	doTweenAlpha('blTw', 'bl', 0, 4, 'linear')
-end
 	if curStep == 400 then
 	doTweenAlpha('GUItween2', 'camGame', 0.5, 0.00000000001, 'linear');
 	doTweenAlpha('GUItween', 'camHUD', 0.5, 0.00000000001, 'linear');
