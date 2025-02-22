@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="The Basement Show" file="The Basement Show" packageName="com.qqqeb.TheBasementShow" package="com.qqqeb.TheBasementShow" main="Main" version="2.6" company="The Basement Team" />
+	<app title="The Basement Show" file="TheBasementShow" packageName="com.qqqeb.TheBasementShowRCDL" package="com.qqqeb.TheBasementShowRCDL" main="Main" version="2.6.1" company="The Basement Team" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
