@@ -159,13 +159,21 @@ class PauseSubState extends MusicBeatSubstate
 				char1.x -= 60;
 				char1.y += 70;
 				}
-			case 'sirokou':
-				char1.loadGraphic(Paths.image('pause/left1'));
+			case 'sirokou old':
+				char1.loadGraphic(Paths.image('pause/left-old'));
 				char1.x -= 280;
 				char1.scale.set(0.8, 0.8);
 				char1.y += 120;
 				char3.loadGraphic(Paths.image('pause/right2'));
 				FlxTween.tween(char1, {x: -40}, 0.2, {ease: FlxEase.sineInOut});
+				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
+				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
+			case 'house-for-sale':
+				char1.loadGraphic(Paths.image('pause/left'));
+				char1.x -= 220;
+				char1.y += 50;
+				char3.loadGraphic(Paths.image('pause/right2'));
+				FlxTween.tween(char1, {x: -20}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
 			case 'blue' | 'tragical-comedy' | 'shattered':
@@ -274,7 +282,7 @@ class PauseSubState extends MusicBeatSubstate
 		else if (PlayState.SONG.song == 'Black Humor') {
 			levelInfo.text += PlayState.SONG.song + ' - Gh05t49_Crrr, Breath_Sans';
 		}
-		else if (PlayState.SONG.song == 'War-of-Whiskers') {
+		else if (PlayState.SONG.song == 'Triple Trouble') {
 			levelInfo.text += PlayState.SONG.song + ' - MarStarBro, Juno, Punkett';
 		}
 		else if (PlayState.SONG.song == 'Invade OLD' || PlayState.SONG.song == 'Black Humor OLD') {

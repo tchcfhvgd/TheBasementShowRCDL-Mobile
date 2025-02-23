@@ -153,6 +153,7 @@ class PlayState extends MusicBeatState
 	public var GF_Y:Float = 130;
 
 	var analog:FlxSprite;
+	var smoothVig:FlxSprite;
 
 	public var songSpeedTween:FlxTween;
 	public var songSpeed(default, set):Float = 1;
@@ -1189,8 +1190,11 @@ class PlayState extends MusicBeatState
 		touchPad.visible = true;
 		#end
 		addMobileControls();
+		if(!ClientPrefs.controllerMode)
+		{
 		mobileControls.onButtonDown.add(onButtonPress);
 		mobileControls.onButtonUp.add(onButtonRelease);
+		}
 		
 		generateSong(SONG.song);
 
@@ -1440,6 +1444,11 @@ class PlayState extends MusicBeatState
 		analog.animation.addByPrefix('idle', 'idle', 18, true);
 		analog.animation.play('idle');
 		add(analog);
+		
+		smoothVig = new FlxSprite(0, 0).loadGraphic(Paths.image('smoothVig'));
+		smoothVig.screenCenter();
+		smoothVig.cameras = [camHor];
+		add(smoothVig);
 		}
 	}
 
