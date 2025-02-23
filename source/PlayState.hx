@@ -935,10 +935,14 @@ class PlayState extends MusicBeatState
 			    qqqeb = true;
 			case 'mucho-mouse':
 			    qqqeb = true;
-			case 'faded':
+		}
+		}
+		
+		switch(Paths.formatToSongPath(SONG.song))
+		{
+		    case 'faded':
 			    qqqeb = true;
-		}
-		}
+	    }
 
 		if(isPixelStage) {
 			introSoundsSuffix = '-pixel';
@@ -1447,7 +1451,8 @@ class PlayState extends MusicBeatState
 		
 		smoothVig = new FlxSprite(0, 0).loadGraphic(Paths.image('smoothVig'));
 		smoothVig.screenCenter();
-		smoothVig.cameras = [camHor];
+		smoothVig.cameras = [camOther];
+		smoothVig.scrollFactor.set(0, 0);
 		add(smoothVig);
 		}
 	}
