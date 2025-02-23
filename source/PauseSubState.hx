@@ -160,7 +160,7 @@ class PauseSubState extends MusicBeatSubstate
 				char1.y += 70;
 				}
 			case 'sirokou':
-				char1.loadGraphic(Paths.image('pause/left-old'));
+				char1.loadGraphic(Paths.image('pause/left1'));
 				char1.x -= 280;
 				char1.scale.set(0.8, 0.8);
 				char1.y += 120;
@@ -169,7 +169,7 @@ class PauseSubState extends MusicBeatSubstate
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
 			case 'sirokou old':
-				char1.loadGraphic(Paths.image('pause/left'));
+				char1.loadGraphic(Paths.image('pause/left-old'));
 				char1.x -= 220;
 				char1.y += 50;
 				char3.loadGraphic(Paths.image('pause/right2'));
