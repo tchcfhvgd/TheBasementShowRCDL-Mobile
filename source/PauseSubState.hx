@@ -141,7 +141,7 @@ class PauseSubState extends MusicBeatSubstate
 				char1.loadGraphic(Paths.image('pause/left11-old'));
 				char1.scale.set(0.85, 0.85);
 				char1.x -= 220;
-				char1.y += 0;
+				char1.y += 10;
 				char3.loadGraphic(Paths.image('pause/right2'));
 				FlxTween.tween(char1, {x: -64}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
