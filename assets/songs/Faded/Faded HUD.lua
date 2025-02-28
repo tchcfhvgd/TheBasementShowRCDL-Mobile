@@ -36,7 +36,7 @@ function onCreatePost()
 
     if getPropertyFromClass('ClientPrefs','judjmentbool') then
     setTextAlignment('judjTxt', 'right')
-    setProperty('judjTxt.x', 110)
+    setProperty('judjTxt.x', 120)
     end
 
     if not downscroll then
