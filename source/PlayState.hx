@@ -1,4 +1,4 @@
-package;
++package;
 
 import flixel.graphics.FlxGraphic;
 #if desktop
@@ -304,7 +304,7 @@ class PlayState extends MusicBeatState
 	public var songHits:Int = 0;
 	public var songMisses:Int = 0;
 	public var scoreTxt:FlxText;
-	public var judjTxt:FlxText;
+	public var :FlxText;
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
 
@@ -1398,7 +1398,7 @@ class PlayState extends MusicBeatState
 		add(scoreTxt);
 
 		if (ClientPrefs.judjmentbool) {
-		judjTxt = new FlxText(10, 300, 1150, "", 20);
+		judjTxt = new FlxText(TBSFreeplayState.chosendifficulty == 'hard' ? 20 : 10, 300, 1150, "", 20);
 		judjTxt.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		judjTxt.scrollFactor.set();
 		judjTxt.borderSize = 1.5;
