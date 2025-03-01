@@ -46,7 +46,7 @@ class TBSFreeplayState extends MusicBeatState
 	var intendedRating:Float = 0;
 
 	var grpCats:FlxTypedGroup<FlxSprite>;
-    static var curSelected:Int = 0; // current song
+   private static var curSelected:Int = 0; // current song
 	var limits:Int = 0; // limits in number (how much versions does a song has)
 	var BG:FlxSprite;
 	var shader1:Shaders.MenusGlow;
