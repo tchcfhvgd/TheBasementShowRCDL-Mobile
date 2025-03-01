@@ -1674,7 +1674,7 @@ class PlayState extends MusicBeatState
 			PlayState.SONG.song == 'Black Humor' ||
 			PlayState.SONG.song == 'Triple Trouble' ||
 			PlayState.SONG.song == 'Kaboom') {
-			if (ClientPrefs.shaders && TBSFreeplayState.chosendifficulty == 'hard') {
+			if (ClientPrefs.shaders && ClientPrefs.OldTVShader && TBSFreeplayState.chosendifficulty == 'hard') {
 			tvShader.blueOpac.value[0] = 1.3;
 			camHUD.setFilters([new ShaderFilter(tvShader)]);
 			camGame.setFilters([new ShaderFilter(tvShader)]);
