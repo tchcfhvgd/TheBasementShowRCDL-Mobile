@@ -35,6 +35,7 @@ class OptionsState extends MusicBeatState
 	'Graphics', 
 	'Visuals and UI', 
 	'Gameplay',
+	'Shaders Options',
 	'Mobile Options'];
 	private var grpOptions:FlxTypedGroup<Alphabet>;
 	private static var curSelected:Int = 0;
@@ -54,6 +55,8 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.VisualsUISubState());
 			case 'Gameplay':
 				openSubState(new options.GameplaySettingsSubState());
+			case 'Shaders Options':
+				openSubState(new options.ShadersSettingsSubState());
 			case 'Mobile Options':
 				openSubState(new mobile.options.MobileOptionsSubState());
 		}
