@@ -1439,7 +1439,7 @@ class PlayState extends MusicBeatState
 		PlayState.SONG.song == 'Black Humor' ||
 		PlayState.SONG.song == 'Triple Trouble' ||
 		PlayState.SONG.song == 'Kaboom') {
-		if (ClientPrefs.shaders && TBSFreeplayState.chosendifficulty == 'hard') {
+		if (ClientPrefs.shaders && ClientPrefs.OldTVShader && TBSFreeplayState.chosendifficulty == 'hard') {
 		analog = new FlxSprite(0, 0);
 		analog.frames = Paths.getSparrowAtlas('analog', 'shared');
 		analog.scale.set(3, 3);

@@ -30,6 +30,7 @@ class ClientPrefs {
 	public static var enablemodchart:Bool = true;
 	public static var judjmentbool:Bool = true;
 	public static var shaders:Bool = true;
+	public static var OldTVShader:Bool = true;
 	public static var cursing:Bool = true;
 	public static var violence:Bool = true;
 	public static var cheaterOn:Bool = true;
@@ -144,6 +145,7 @@ class ClientPrefs {
 		FlxG.save.data.enablemodchart = enablemodchart;
 		FlxG.save.data.judjmentbool = judjmentbool;
 		FlxG.save.data.shaders = shaders;
+		FlxG.save.data.OldTVShader = OldTVShader;
 		FlxG.save.data.arrowHSV = arrowHSV;
 		FlxG.save.data.canCheat = canCheat;
 		FlxG.save.data.imagesPersist = imagesPersist;
@@ -262,6 +264,10 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.shaders != null){
 			shaders = FlxG.save.data.shaders;
+		}
+		
+		if(FlxG.save.data.OldTVShader != null){
+			OldTVShader = FlxG.save.data.OldTVShader;
 		}
 		if(FlxG.save.data.mechanicsOn != null){
 			mechanicsOn = FlxG.save.data.mechanicsOn;
