@@ -80,8 +80,8 @@ function chromToggle()
             
             if(ClientPrefs.OldTVShader)
             {
-            game.camGame.setFilters([new ShaderFilter(Shader2),new ShaderFilter(game.getLuaObject(Shader2).shader)]);
-            game.camHUD.setFilters([new ShaderFilter(Shader2),new ShaderFilter(game.getLuaObject(Shader2).shader)]);
+            game.camGame.setFilters([new ShaderFilter("Shader2"),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            game.camHUD.setFilters([new ShaderFilter("Shader2"),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
             }
             
             game.getLuaObject('chromToggle').shader = chromToggle;
