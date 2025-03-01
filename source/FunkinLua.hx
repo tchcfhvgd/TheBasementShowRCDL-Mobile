@@ -209,6 +209,7 @@ class FunkinLua {
 		set('noResetButton', ClientPrefs.noReset);
 		set('lowQuality', ClientPrefs.lowQuality);
 		set('shadersEnabled', ClientPrefs.shaders);
+		set('OldTVShadersEnabled', ClientPrefs.OldTVShader);
 		set('scriptName', scriptName);
 		set('currentModDirectory', Paths.currentModDirectory);
 
