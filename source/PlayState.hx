@@ -1,4 +1,4 @@
-+package;
+package;
 
 import flixel.graphics.FlxGraphic;
 #if desktop
@@ -304,7 +304,7 @@ class PlayState extends MusicBeatState
 	public var songHits:Int = 0;
 	public var songMisses:Int = 0;
 	public var scoreTxt:FlxText;
-	public var :FlxText;
+	public var judjTxt:FlxText;
 	var timeTxt:FlxText;
 	var scoreTxtTween:FlxTween;
 
