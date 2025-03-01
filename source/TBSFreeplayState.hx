@@ -193,7 +193,14 @@ class TBSFreeplayState extends MusicBeatState
 
         override public function update(elapsed:Float)
 	{
-		curDifficulty2 = Math.round(Math.max(0, 0));
+		if(CoolUtil.difficulties.contains(CoolUtil.defaultDifficulty))
+		{
+			curDifficulty2 = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(CoolUtil.defaultDifficulty)));
+		}
+		else
+		{
+			curDifficulty2 = 0;
+		}
 		
 		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty2);
 		intendedRating = Highscore.getRating(freeplays[curSelected], curDifficulty2);
