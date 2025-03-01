@@ -157,8 +157,13 @@ function chromToggle()
             var chromToggle = game.createRuntimeShader('ChromaticAbberation');
             var shaderVcr= game.createRuntimeShader('glitchChromatic');
             
-            game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
-            game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject(chromToggle).shader)]);
+            game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject(chromToggle).shader)]);
+            if(ClientPrefs.OldTVShader)
+            {
+            game.camGame.setFilters([new ShaderFilter("Shader2"),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            game.camHUD.setFilters([new ShaderFilter("Shader2"),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            }
             game.getLuaObject('chromToggle').shader = chromToggle;
             game.getLuaObject("temporaryShader1").shader = shaderVcr;
                 
@@ -185,8 +190,13 @@ function onStepHit()
             var chromToggle = game.createRuntimeShader('ChromaticAbberation');
             var shaderVcr= game.createRuntimeShader('glitchChromatic');
             
-            game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader),new ShaderFilter(game.getLuaObject("Shader3").shader)]);
-            game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader),new ShaderFilter(game.getLuaObject("Shader3").shader)]);
+            game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader3").shader),new ShaderFilter(game.getLuaObject("Shader3").shader)]);
+            game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader3").shader),new ShaderFilter(game.getLuaObject("Shader3").shader)]);
+            if(ClientPrefs.OldTVShader)
+            {
+            game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            }
             game.getLuaObject('chromToggle').shader = chromToggle;
             game.getLuaObject("temporaryShader1").shader = shaderVcr;
                 
@@ -207,8 +217,13 @@ end
             var chromToggle = game.createRuntimeShader('ChromaticAbberation');
             var shaderVcr= game.createRuntimeShader('glitchChromatic');
             
-            game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
-            game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject(chromToggle).shader)]);
+            game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject(chromToggle).shader)]);
+            if(ClientPrefs.OldTVShader)
+            {
+            game.camGame.setFilters([new ShaderFilter("Shader2"),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            game.camHUD.setFilters([new ShaderFilter("Shader2"),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            }
             game.getLuaObject('chromToggle').shader = chromToggle;
             game.getLuaObject("temporaryShader1").shader = shaderVcr;
                 
@@ -229,8 +244,13 @@ end
                 var chromToggle = game.createRuntimeShader('ChromaticAbberation');
                 var shaderVcr= game.createRuntimeShader('glitchChromatic');
                 
-                game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader),new ShaderFilter(game.getLuaObject("Shader3").shader)]);
-                game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader2").shader),new ShaderFilter(game.getLuaObject("Shader3").shader)]);
+                game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader3").shader),new ShaderFilter(game.getLuaObject("Shader3").shader)]);
+                game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject("Shader3").shader),new ShaderFilter(game.getLuaObject("Shader3").shader)]);
+                if(ClientPrefs.OldTVShader)
+                {
+                game.camGame.setFilters([new ShaderFilter("Shader2"),new ShaderFilter(game.getLuaObject("Shader2").shader),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+                game.camHUD.setFilters([new ShaderFilter("Shader2"),new ShaderFilter(game.getLuaObject("Shader2").shader),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+                }
                 game.getLuaObject('chromToggle').shader = chromToggle;
                 game.getLuaObject("temporaryShader1").shader = shaderVcr;
                     
