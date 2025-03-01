@@ -19,10 +19,13 @@ function onStepHit()
         if getPropertyFromClass('ClientPrefs','shaders') then
         runHaxeCode([[
             trace(ShaderFilter);
-            game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader),new ShaderFilter(game.getLuaObject("Shader1").shader)]);
             if(ClientPrefs.OldTVShader)
             {
-            game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader2").shader),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+            }
+            else
+            {
+            game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader),new ShaderFilter(game.getLuaObject("Shader1").shader)]);
             }
         ]])
     end
