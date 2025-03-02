@@ -36,13 +36,26 @@ class ShadersSettingsSubState extends BaseOptionsMenu
 		title = 'Shaders';
 		rpcTitle = 'Shaders Settings Menu'; //for Discord Rich Presence
 
+		var option:Option = new Option('MenusShaders', //Name
+			'shader.', //Description
+			'MenusShaders', //Save data variable name
+			'bool', //Variable type
+			true); //Default value
+		addOption(option);
+		
 		var option:Option = new Option('OldTVShader', //Name
 			'shader.', //Description
 			'OldTVShader', //Save data variable name
 			'bool', //Variable type
 			true); //Default value
 		addOption(option);
-
+  
+        var option:Option = new Option('SnowfallShader', //Name
+			'shader.', //Description
+			'snowfall', //Save data variable name
+			'bool', //Variable type
+			true); //Default value
+		addOption(option);
 
 		super();
 	}
