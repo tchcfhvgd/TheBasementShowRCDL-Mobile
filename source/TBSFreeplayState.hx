@@ -83,7 +83,7 @@ class TBSFreeplayState extends MusicBeatState
 			unThing = true;
 		});
 
-		if (ClientPrefs.shaders) {
+		if (ClientPrefs.shaders && ClientPrefs.MenusShaders) {
 			FlxG.game.filtersEnabled = true;
 			shader1 = new Shaders.MenusGlow();
 			shader1.size.value[0] = 16;
