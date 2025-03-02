@@ -26,7 +26,7 @@ class TBSFreeplayState extends MusicBeatState
 
 	public var alreadySelected:Bool = false;
 	
-	var curDifficulty2:Int = 0;
+	var curDifficulty:Int = 0;
 
 	var menuCreditTxt:FlxText;
 
@@ -193,10 +193,10 @@ class TBSFreeplayState extends MusicBeatState
 
         override public function update(elapsed:Float)
 	{
-			curDifficulty2 = Math.round(Math.max(0, 0));
+			curDifficulty = Math.round(Math.max(0, 0));
 		
-		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty2);
-		intendedRating = Highscore.getRating(freeplays[curSelected], curDifficulty2);
+		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty);
+		intendedRating = Highscore.getRating(freeplays[curSelected], curDifficulty);
 		
 		xy.text = "x:" + FlxG.mouse.x + "y:" + FlxG.mouse.y;
 		songtext.loadGraphic(Paths.image((freeplays[curSelected] == '???' ? 'freeplay/songs/unknown' : 'freeplay/songs/' + freeplays[curSelected])));
@@ -434,9 +434,6 @@ class TBSFreeplayState extends MusicBeatState
 	}
 	function changeSelection(change:Int = 0)
 	{
-		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty2);
-		intendedRating = Highscore.getRating(freeplays[curSelected], curDifficulty2);
-		
 		curSelected += change;
 		if (curSelected < 0)
 			curSelected = freeplays.length - 1;
