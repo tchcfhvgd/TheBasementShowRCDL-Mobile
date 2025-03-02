@@ -275,6 +275,7 @@ class TBSFreeplayState extends MusicBeatState
 			FlxG.sound.playMusic(Paths.music('freakyMenu'), 1);
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			MusicBeatState.switchState(new MainMenuState());
+			chosendifficulty = 'hard';
 		}
 
         if (controls.ACCEPT && freeplays[curSelected] != '???' && !hasVersion && !alreadySelected) {
