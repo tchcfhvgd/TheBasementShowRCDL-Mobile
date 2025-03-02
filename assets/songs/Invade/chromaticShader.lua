@@ -81,8 +81,8 @@ function chromToggle()
             }
             else
             {
-            game.camGame.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject(chromToggle).shader)]);
-            game.camHUD.setFilters([new ShaderFilter(chromToggle),new ShaderFilter(game.getLuaObject(chromToggle).shader)]);
+            game.camGame.setFilters([new ShaderFilter(chromToggle)]);
+            game.camHUD.setFilters([new ShaderFilter(chromToggle)]);
             }
             game.getLuaObject('chromToggle').shader = chromToggle;
             game.getLuaObject("temporaryShader1").shader = shaderVcr;
