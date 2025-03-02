@@ -8,13 +8,13 @@ function onCreatePost()
     setShaderFloat("Shader2", "blueOpac", 1.3)
 
     runHaxeCode([[
-        if(ClientPrefs.OldTVShader)
+        if(ClientPrefs.OldTVShader && ClientPrefs.snowfall)
         {
         game.camGame.setFilters([new ShaderFilter(game.getLuaObject("snowShaderfromHypno").shader),new ShaderFilter(game.getLuaObject("Shader2").shader)]);
 
         game.camHUD.setFilters([new ShaderFilter(game.getLuaObject("Shader2").shader)]);
         }
-        else
+        else if(!ClientPrefs.OldTVShader && ClientPrefs.snowfall)
         {
         game.camGame.setFilters([new ShaderFilter(game.getLuaObject("snowShaderfromHypno").shader),new ShaderFilter(game.getLuaObject("snowShaderfromHypno").shader)]);
         }
