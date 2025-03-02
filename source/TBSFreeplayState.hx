@@ -32,6 +32,8 @@ class TBSFreeplayState extends MusicBeatState
 
 	var unThing:Bool = false;
 
+	private static var lastDifficultyName:String = '';
+	
 	public static var chosendifficulty:String = 'hard'; // for old versions
 	public static var alterVersions:Float = 0; // current selected difficulty
 
@@ -193,10 +195,18 @@ class TBSFreeplayState extends MusicBeatState
 
         override public function update(elapsed:Float)
 	{
-			curDifficulty = Math.round(Math.max(0, 0));
+	    lastDifficultyName = CoolUtil.difficulties[curDifficulty];
+	    
+	    if(lastDifficultyName == '')
+		{
+			lastDifficultyName = CoolUtil.defaultDifficulty;
+		}
+		curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(lastDifficultyName)));
 		
+		#if !switch
 		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty);
 		intendedRating = Highscore.getRating(freeplays[curSelected], curDifficulty);
+		#end
 		
 		xy.text = "x:" + FlxG.mouse.x + "y:" + FlxG.mouse.y;
 		songtext.loadGraphic(Paths.image((freeplays[curSelected] == '???' ? 'freeplay/songs/unknown' : 'freeplay/songs/' + freeplays[curSelected])));
@@ -434,6 +444,20 @@ class TBSFreeplayState extends MusicBeatState
 	}
 	function changeSelection(change:Int = 0)
 	{
+		if(CoolUtil.difficulties.contains(CoolUtil.defaultDifficulty))
+		{
+			curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(CoolUtil.defaultDifficulty)));
+		}
+		else
+		{
+			curDifficulty = 0;
+		}
+		
+		#if !switch
+		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty);
+		intendedRating = Highscore.getRating(freeplays[curSelected], curDifficulty);
+		#end
+		
 		curSelected += change;
 		if (curSelected < 0)
 			curSelected = freeplays.length - 1;
