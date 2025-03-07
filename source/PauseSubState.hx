@@ -176,7 +176,7 @@ class PauseSubState extends MusicBeatSubstate
 				FlxTween.tween(char1, {x: -20}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
-			case 'blue' | 'tragical-comedy' | 'shattered':
+			case 'blue' | 'tragical-comedy' | 'tragical-comedy old' | 'shattered':
 				char1.loadGraphic(Paths.image('pause/left3'));
 				char1.scale.set(0.8, 0.8);
 				char1.x -= 280;
