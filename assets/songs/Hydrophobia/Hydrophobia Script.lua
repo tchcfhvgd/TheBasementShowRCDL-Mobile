@@ -111,9 +111,9 @@ function onCreatePost()
     }
     else
     {
-    game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader),new ShaderFilter(game.getLuaObject("Shader1").shader)]);
+    game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader)]);
     
-    game.camHUD.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader),new ShaderFilter(game.getLuaObject("Shader1").shader)]);
+    game.camHUD.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader)]);
     }
     ]])
 end
