@@ -16,7 +16,13 @@ function onCreatePost()
         }
         else if(!ClientPrefs.OldTVShader && ClientPrefs.snowfall)
         {
-        game.camGame.setFilters([new ShaderFilter(game.getLuaObject("snowShaderfromHypno").shader),new ShaderFilter(game.getLuaObject("snowShaderfromHypno").shader)]);
+        game.camGame.setFilters([new ShaderFilter(game.getLuaObject("snowShaderfromHypno").shader)]);
+        }
+        else if(ClientPrefs.OldTVShader && !ClientPrefs.snowfall)
+        {
+        game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader2").shader)]);
+
+        game.camHUD.setFilters([new ShaderFilter(game.getLuaObject("Shader2").shader)]);
         }
         ]])
     end
