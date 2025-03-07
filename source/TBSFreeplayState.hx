@@ -26,7 +26,7 @@ class TBSFreeplayState extends MusicBeatState
 
 	public var alreadySelected:Bool = false;
 	
-	var curDifficulty:Int = 0;
+	var curDifficulty:Int = 1;
 
 	var menuCreditTxt:FlxText;
 
@@ -195,13 +195,7 @@ class TBSFreeplayState extends MusicBeatState
 
         override public function update(elapsed:Float)
 	{
-	    lastDifficultyName = CoolUtil.difficulties[curDifficulty];
-	    
-	    if(lastDifficultyName == '')
-		{
-			lastDifficultyName = CoolUtil.defaultDifficulty;
-		}
-		curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(lastDifficultyName)));
+		curDifficulty = Math.round(Math.max(0, 1));
 		
 		#if !switch
 		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty);
@@ -444,15 +438,6 @@ class TBSFreeplayState extends MusicBeatState
 	}
 	function changeSelection(change:Int = 0)
 	{
-		if(CoolUtil.difficulties.contains(CoolUtil.defaultDifficulty))
-		{
-			curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(CoolUtil.defaultDifficulty)));
-		}
-		else
-		{
-			curDifficulty = 0;
-		}
-		
 		#if !switch
 		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty);
 		intendedRating = Highscore.getRating(freeplays[curSelected], curDifficulty);
