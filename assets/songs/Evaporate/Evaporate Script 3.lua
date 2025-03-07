@@ -25,7 +25,7 @@ function onStepHit()
             }
             else
             {
-            game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader),new ShaderFilter(game.getLuaObject("Shader1").shader)]);
+            game.camGame.setFilters([new ShaderFilter(game.getLuaObject("Shader1").shader)]);
             }
         ]])
     end
