@@ -121,7 +121,7 @@ class PauseSubState extends MusicBeatSubstate
 		switch PlayState.SONG.song.toLowerCase() 
 		{
 			case 'house-for-sale':
-				char1.loadGraphic(Paths.image('pause/left'));
+				char1.loadGraphic(Paths.image('pause/left-old'));
 				char1.x -= 220;
 				char1.y += 50;
 				char3.loadGraphic(Paths.image('pause/right2'));
@@ -147,7 +147,7 @@ class PauseSubState extends MusicBeatSubstate
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
 			case 'evaporate':
-				char1.loadGraphic(Paths.image('pause/left'));
+				char1.loadGraphic(Paths.image('pause/left-old'));
 				char1.x -= 250;
 				char1.y += 50;
 				char3.loadGraphic(Paths.image('pause/right2'));
