@@ -26,7 +26,7 @@ class TBSFreeplayState extends MusicBeatState
 
 	public var alreadySelected:Bool = false;
 	
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
 	var menuCreditTxt:FlxText;
 
@@ -197,7 +197,7 @@ class TBSFreeplayState extends MusicBeatState
 
         override public function update(elapsed:Float)
 	{
-		curDifficulty = Math.round(Math.max(0, 1));
+		curDifficulty = Math.round(Math.max(0, 2));
 		
 		#if !switch
 		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty);
@@ -281,7 +281,6 @@ class TBSFreeplayState extends MusicBeatState
 			FlxG.sound.playMusic(Paths.music('freakyMenu'), 1);
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			MusicBeatState.switchState(new MainMenuState());
-			chosendifficulty = 'hard';
 		}
 
         if (controls.ACCEPT && freeplays[curSelected] != '???' && !hasVersion && !alreadySelected) {
