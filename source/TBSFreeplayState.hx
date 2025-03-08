@@ -296,7 +296,7 @@ class TBSFreeplayState extends MusicBeatState
 			});
         }
 
-		if (controls.ACCEPT && hasVersion && isInSubstate && !orange) {
+		if (controls.ACCEPT && hasVersion && isInSubstate) {
 			PlayState.SONG = Song.loadFromJson(freeplays[curSelected] + '-' + chosendifficulty, freeplays[curSelected]);
 			LoadingState.loadAndSwitchState(new PlayState());
 		}
@@ -309,12 +309,15 @@ class TBSFreeplayState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
 			alterVersions = 0;
 			isInSubstate = true;
-			FlxTween.tween(altBG, {y: altBG.y + 650}, 1, {ease: FlxEase.elasticInOut});
+			orange = true;
+			FlxTween.tween(altBG, {y: altBG.y + 650}, 1, {ease: FlxEase.elasticInOut, onComplete: function(twn:FlxTween) {
+			orange = false;
+			}});
 			FlxTween.tween(songNameThing, {y: songNameThing.y + 650}, 1, {ease: FlxEase.elasticInOut});
 			FlxTween.tween(imageThing, {y: imageThing.y + 650}, 1, {ease: FlxEase.elasticInOut});
         }
 
-		if (controls.BACK && isInSubstate) {
+		if (controls.BACK && isInSubstate && !orange) {
 			isInSubstate = false;
 			orange = true;
 			FlxTween.tween(altBG, {y: altBG.y - 650}, 1, {ease: FlxEase.circOut, onComplete: function(twn:FlxTween) {
