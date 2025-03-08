@@ -8,7 +8,7 @@ function math.lerp(from,to,i) return from+(to-from)*i end
 
 function onCreatePost()
     if getPropertyFromClass('ClientPrefs','judjmentbool') then
-    setProperty('judjTxt.x', getProperty('judjTxt.x') - 10)
+    setProperty('judjTxt.x', getProperty('judjTxt.x') + 10)
     end
     setProperty('camHUD.zoom', 0.8)
     makeLuaSprite('border','lolBorder',0,0)
