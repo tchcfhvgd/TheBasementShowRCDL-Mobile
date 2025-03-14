@@ -5,7 +5,7 @@ local doingIt = false
 local time = 1.5
 
 function checkDodge()
-	if dodging then
+	if dodging and getPropertyFromClass('ClientPrefs','mechanicsOn') then
 		characterPlayAnim('boyfriend', 'dodge', true);
 		setProperty('boyfriend.specialAnim', true);
 		characterPlayAnim('dad', 'attack', true);
@@ -16,7 +16,7 @@ function checkDodge()
 		setProperty('dad.specialAnim', true);
 		removeLuaSprite('Warn', true)
 		playSound('chainsaw', 0.7);
-	elseif not dodging then
+	elseif not dodging and getPropertyFromClass('ClientPrefs','mechanicsOn') then
         setProperty('health', getProperty('health') - 1.5)
         playSound('chainsaw', 0.7);
         characterPlayAnim('boyfriend', 'singRIGHTmiss', true);
