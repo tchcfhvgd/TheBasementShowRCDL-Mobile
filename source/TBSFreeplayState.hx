@@ -26,7 +26,7 @@ class TBSFreeplayState extends MusicBeatState
 
 	public var alreadySelected:Bool = false;
 	
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
 	var menuCreditTxt:FlxText;
 
@@ -197,6 +197,8 @@ class TBSFreeplayState extends MusicBeatState
 
         override public function update(elapsed:Float)
 	{
+		curDifficulty = Math.round(Math.max(0, 2));
+		
 		#if !switch
 		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty);
 		intendedRating = Highscore.getRating(freeplays[curSelected], curDifficulty);

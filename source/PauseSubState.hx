@@ -140,7 +140,7 @@ class PauseSubState extends MusicBeatSubstate
 			case 'invade old':
 				char1.loadGraphic(Paths.image('pause/left11-old'));
 				char1.scale.set(0.85, 0.85);
-				char1.x -= 220;
+				char1.x -= 240;
 				char1.y += 10;
 				char3.loadGraphic(Paths.image('pause/right2'));
 				FlxTween.tween(char1, {x: -64}, 0.2, {ease: FlxEase.sineInOut});
@@ -154,10 +154,12 @@ class PauseSubState extends MusicBeatSubstate
 				FlxTween.tween(char1, {x: -20}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
-				if(curStep == 1023) {
+				if(curStep >= 1023) {
 				char1.loadGraphic(Paths.image('pause/left1'));
-				char1.x -= 60;
-				char1.y += 70;
+				char1.x -= 280;
+				char1.scale.set(0.8, 0.8);
+				char1.y += 120;
+				FlxTween.tween(char1, {x: -40}, 0.2, {ease: FlxEase.sineInOut});
 				}
 			case 'sirokou':
 				char1.loadGraphic(Paths.image('pause/left1'));
@@ -166,14 +168,6 @@ class PauseSubState extends MusicBeatSubstate
 				char1.y += 120;
 				char3.loadGraphic(Paths.image('pause/right2'));
 				FlxTween.tween(char1, {x: -40}, 0.2, {ease: FlxEase.sineInOut});
-				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
-				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
-			case 'sirokou old':
-				char1.loadGraphic(Paths.image('pause/left-old'));
-				char1.x -= 220;
-				char1.y += 50;
-				char3.loadGraphic(Paths.image('pause/right2'));
-				FlxTween.tween(char1, {x: -20}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
 			case 'blue' | 'tragical-comedy' | 'tragical-comedy old' | 'shattered':
