@@ -154,7 +154,7 @@ class PauseSubState extends MusicBeatSubstate
 				FlxTween.tween(char1, {x: -20}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char2, {x: 319}, 0.2, {ease: FlxEase.sineInOut});
 				FlxTween.tween(char3, {x: 369}, 0.2, {ease: FlxEase.sineInOut});
-				if(curStep >= 1023) {
+				if(PlayState.curStep2 >= 1023) {
 				char1.loadGraphic(Paths.image('pause/left1'));
 				char1.x -= 280;
 				char1.scale.set(0.8, 0.8);
@@ -632,13 +632,5 @@ class PauseSubState extends MusicBeatSubstate
 	function updateSkipTimeText()
 	{
 		skipTimeText.text = FlxStringUtil.formatTime(Math.max(0, Math.floor(curTime / 1000)), false) + ' - ' + FlxStringUtil.formatTime(Math.max(0, Math.floor(FlxG.sound.music.length / 1000)), false);
-	}
-
-	override function stepHit() {
-		if(curStep == 1023 && PlayState.SONG.song.toLowerCase() == 'evaporate') {
-			char1.loadGraphic(Paths.image('pause/left1'));
-			char1.x -= 60;
-			char1.y += 70;
-		}
 	}
 }

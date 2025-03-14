@@ -138,6 +138,7 @@ class PlayState extends MusicBeatState
 
 	// tbs shit
 	public var snowLayer:Int = 0;
+	public static var curStep2:Int = 0;
 	public var flipHP:Bool = false;
 	public static var tvShader:Shaders.OldTVShader;
 	public var jerryScream:FlxSprite;
@@ -5891,6 +5892,7 @@ class PlayState extends MusicBeatState
 		}
 
 		lastStepHit = curStep;
+		curStep2 = curStep;
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
 	}
