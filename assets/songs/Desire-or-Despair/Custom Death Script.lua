@@ -1,5 +1,5 @@
 function onCreate()
-    luaDebugMode = true
+    luaDebugMode = false
     setPropertyFromClass('GameOverSubstate', 'characterName', 'spike playable-death'); --Character json file for the death animation
     setPropertyFromClass('GameOverSubstate', 'deathSoundName', 'spike'); --put in mods/sounds/
     setPropertyFromClass('GameOverSubstate', 'loopSoundName', 'gameOver'); --put in mods/music/
