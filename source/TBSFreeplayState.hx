@@ -26,7 +26,7 @@ class TBSFreeplayState extends MusicBeatState
 
 	public var alreadySelected:Bool = false;
 	
-	var curDifficulty:Int = 2;
+	var curDifficulty:Int = 1;
 
 	var menuCreditTxt:FlxText;
 
@@ -97,6 +97,7 @@ class TBSFreeplayState extends MusicBeatState
 		}
 
 		PlayState.isStoryMode = false;
+		WeekData.reloadWeekFiles(false);
 
 		FlxG.sound.playMusic(Paths.music('freeplay'), 1);
 
@@ -197,7 +198,7 @@ class TBSFreeplayState extends MusicBeatState
 
         override public function update(elapsed:Float)
 	{
-		curDifficulty = Math.round(Math.max(0, 2));
+		curDifficulty = Math.round(Math.max(0, 1));
 		
 		#if !switch
 		intendedScore = Highscore.getScore(freeplays[curSelected], curDifficulty);
